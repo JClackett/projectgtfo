@@ -6,14 +6,14 @@ class PostsController < ApplicationController
 
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :sidebar_tags, only: [:index, :new, :create]
+	before_action :sidebar_tags, only: [:index, :new, :create, :show]
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # GET : Index
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	def index
-		@posts = Post.all
+		@posts = Post.all.reverse
 	end
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
