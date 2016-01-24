@@ -8,6 +8,24 @@
 	background-color: #FFF;
 	z-index: 1;
 	height: 60px;	
+	
+	/* --------------------------------------------------
+	   Logo
+	-------------------------------------------------- */
+	.logo-section {
+		cursor: pointer;
+		
+		h3 {
+			line-height: 40px;
+			font-weight: 500;
+			color:$blue;
+			letter-spacing: 4px;
+			font-variant: small-caps;
+			padding: 10px 20px;
+			margin: 0;
+			@include no-select(none);
+		}
+	}
 		
 	/* --------------------------------------------------
 	   Search
@@ -84,7 +102,7 @@
 		}
 
 		/* --------------------------------------------------
-		   Pop up Section
+		  Logout Pop up Section
 		-------------------------------------------------- */
 		.user-popup {
 			display:none;
