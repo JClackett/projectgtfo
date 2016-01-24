@@ -5,7 +5,9 @@ class TagsController < ApplicationController
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	before_action :set_tag, only: [:show, :edit, :update, :destroy]
-	before_action :authenticate_user!, only: [:new, :edit, :update, :create, :destroy, :show]
+	before_action :authenticate_user!, except: [:index]
+	before_action :sidebar_tags, only: [:index, :new, :create]
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # GET : Index

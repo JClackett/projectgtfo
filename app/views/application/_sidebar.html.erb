@@ -1,11 +1,20 @@
 <div class="sidebar right">
+
+	<div class="sidebar-title">
+		<p>Tags</p>
+	</div>
 	
 
 	<div class="main-nav">
 
 		<ul>
-			
 
+			<% @tags.all.each do |tag|%>
+
+				<li><%= link_to tag.title.titleize, root_path(tag: tag.title), class: 'tag-links' %></li>
+
+			<% end %>
+			
 		</ul>
 
 	</div>

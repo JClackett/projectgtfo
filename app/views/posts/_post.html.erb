@@ -1,0 +1,30 @@
+<div class="post-wrapper">
+
+	<div class="post-title">
+		<h3><%= post.title %></h3>
+	</div>
+
+	<div class="post-creator">
+		<p><%= post.user.first_name %></p>
+	</div>
+
+	<div class="post-text">
+		<p><%= post.text %></p>
+	</div>
+
+	<div class="post-datetime">
+		<p><%= post.created_at %></p>
+	</div>
+
+	<%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+
+		<div class="post-delete">
+
+			<i class="fa fa-times"></i>
+
+		</div>
+
+	<% end %>
+
+
+</div>

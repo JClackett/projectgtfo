@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     # Posts
   # ----------------------------------------------------------
 
-  resources :posts , except: [:edit, :show ] 
+  resources :posts
 
   root to: 'posts#index' 
   
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # Tags
   # ----------------------------------------------------------
 
-  resources :tags, except: [:show ]
+  resources :tags, except: [:show, :edit ]
 
   # ----------------------------------------------------------
     # Devise

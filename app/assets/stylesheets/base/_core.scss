@@ -9,10 +9,9 @@ html {
 
 body {
 	margin: 0;
-	background-color: $body;
+	background-color: $lightgrey;
 	height: 100%;
     	overflow: auto;
-    	min-width: 650px;
 }
 
 ::-webkit-scrollbar { 

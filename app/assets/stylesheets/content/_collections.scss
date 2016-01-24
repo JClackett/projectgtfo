@@ -1,50 +1,47 @@
 /* --------------------------------------------------
-   Collections
+   Posts
 -------------------------------------------------- */
  
-.collection-wrapper {
-	background-color: $lightgrey;
-	@include border-radius(2px);
-	border:1px solid $greyD;
+.post-wrapper {
 	position: relative;
-	@include box-shadow(0px,0px,2px,0px, rgba(0,0,0,0.1));
-	width:48%;
-	margin: 1% 1% 0 1%;
-
+	width:75%;
+	margin: 10px;
+	padding: 10px;	
+	background-color: $white;
 	// height: 120px;
-	
-	&:hover {
-		-webkit-transition:ease-in all 100ms;
-		-webkit-transform: scale(1.02,1.02); /* Safari */
-		transform: scale(1.02,1.02);
-		border:1px solid $greyB;    	
-	}
-
-	&:hover .collection-pin {
-		display:block;
-	}
-
-
-	@include breakpoint(small) {
-		width:31.3%;
-	}
-
+	@extend .group;
+	@include box-shadow(0px,0px,2px,0px, rgba(0,0,0,0.1));	
 	@include breakpoint(medium) {
-		width:23%;
+		width:50%;
 	}
+
+	&:hover {
+		@include box-shadow(0px,0px,2px,0px, rgba(0,0,0,0.2));
+	}
+
+	/* --------------------------------------------------
+	   Post Title
+	-------------------------------------------------- */
 	
-	@include breakpoint(medium-large) {
-		width:18%;
+	.post-title {
+		float: left;
+		
+		h3 {
+			color:$grey3;
+			margin: 0;
+		}
+		
 	}
 
+	/* --------------------------------------------------
+	   Post Creator
+	-------------------------------------------------- */
 
-	.collection-pin {
-		display:none;
+	.post-creator {
+		float: right;
 		
-		i {
-			position: absolute;
-			padding: 6px 10px;
-			font-size:16px;
+		p {
+			@include font-size(14);
 			color:$greyB;
 			cursor:pointer;
 			-webkit-transition:ease-in all 100ms;
@@ -55,118 +52,51 @@
 		}
 	}
 
-	.pin-selected {
-		display:block;
+	/* --------------------------------------------------
+	   Post Text
+	-------------------------------------------------- */
+
+	.post-text {
+		display:inline-block;
+		width: 100%;
+		
+		p {
+			color:$grey8;		
+		}
+	}
+
+	/* --------------------------------------------------
+	   Post DateTime
+	-------------------------------------------------- */
+	    
+	.post-datetime {
+		float: left;
+		
+		p {
+			color:$greyC;
+		}
+	}
+
+	/* --------------------------------------------------
+	   Post Delete
+	-------------------------------------------------- */
+
+	.post-delete {	
+		float: right;
+
 		i {
-			color:$blue;		
+			color:$red;
+			float: right;
+
 			&:hover {
-				color:lighten($blue, 10%);
-			}
-		}
-	}
-	
-	
-	.collection-title {
-		text-align: center;
-		border-bottom: 1px solid $greyE;
-		background-color: $white;
-		overflow-y:hidden;
-		white-space: nowrap;
-		
-		a {
-			@extend .group;
-		}
-		
-		h5 {
-			padding: 0 32px;
-			overflow-x: hidden;
-			width: 100%;
-			color:$grey7;
-			font-weight: 600;
-			margin: 0;
-			line-height: 30px;
-			
-			&:hover {
-				text-decoration: underline;
-			}
-
-		}
-	}
-
-	/* --------------------------------------------------
-	   Collection Links
-	-------------------------------------------------- */
-	
-	.collection-links-wrapper {
-		padding: 0;
-		
-		ul {	
-			height: 75px;
-			margin: 5px;
-			padding: 0;
-
-			li {
-				margin: 0 0 5px 0;
-				list-style: none;
-				text-align: center;
-				overflow: hidden;
-				
-		
-				a {
-					font-variant: small-caps;
-					color: $grey9;
-					@include font-size(14);
-					white-space: nowrap;
-
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
-
-	/* --------------------------------------------------
-	   New Collection Form
-	-------------------------------------------------- */
-			.new-collection-form {
-				text-align:center;
-				border:none;
-				color:$grey7;
-				width: 100%;
-				font-weight: 500;
-				
-				&::-webkit-input-placeholder {
-					color:$greyB;
-					font-variant: small-caps;
-					font-weight: 500;
-				}
-			
-			}
-
-			.form-submit-button {
-
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
-				background-color: $green;
-				background-clip: padding-box;
-				border:none;
-				padding: 10px;
-				@include font-size(40);
-				width: 100%;
-				color:$white;
-				font-weight: 600;
-				font-variant: small-caps;
 				-webkit-transition:ease-in all 100ms;
-				transition:ease-in all 100ms;
-				
-
-				
-				
-
-				&:hover {
-					background-color: $dark-green;
-				}
+				-webkit-transform: scale(1.3,1.3); /* Safari */
+				transform: scale(1.3,1.3);
 			}
+
+		}
+
+	}
+
+
 }

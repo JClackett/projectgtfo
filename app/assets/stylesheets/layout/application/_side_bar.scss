@@ -10,6 +10,7 @@ Sidebar
 	width: 300px;
 	position: fixed;
 	right:-300px;
+	padding: 20px;
 	margin-top: 60px;
 	z-index: 2;
 	
@@ -17,7 +18,19 @@ Sidebar
 		right: 0;
 	}
 	
-
+	/* --------------------------------------------------
+	   Sidebar Title
+	-------------------------------------------------- */
+	.sidebar-title {
+		margin-bottom: 20px;
+		width: 100%;
+		border-bottom: 1px solid $grey9;
+		
+		p {
+			margin:0 0 10px 0;	
+			font-weight:700;
+		}
+	}
 
 	/* --------------------------------------------------
 	   Main Nav
@@ -32,6 +45,16 @@ Sidebar
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
+			
+			li {	
+				float: left;
+				a {
+					color:$greyE;
+					padding:5px 10px;
+					border:1px solid $greyE;
+					@include border-radius(6px);
+				}
+			}
 
 		}
 
