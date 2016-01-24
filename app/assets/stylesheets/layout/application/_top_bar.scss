@@ -109,21 +109,19 @@
 			position:absolute;
 			margin: 0;
 			text-align: center;
-			right:60px;
+			right:55px;
 			top: 5px;
 			z-index: 2;
 			background-color: $white;
 
 			a {
 				text-decoration:none;
-				padding: 10px 5px;
+				padding: 10px;
 				margin: 0;
 				font-weight: 500;
 				@include font-size(12);
 				text-transform: uppercase;
 				line-height: 50px;
-				border-left:1px solid $greyE;
-				border-right:1px solid $greyE;
 				color:$grey7;
 
 				&:hover {
@@ -148,14 +146,12 @@
 
 			a {
 				text-decoration:none;
-				padding: 10px 5px;
+				padding: 10px;
 				margin: 0;
 				font-weight: 500;
 				@include font-size(12);
 				text-transform: uppercase;
 				line-height: 50px;
-				border-left:1px solid $greyE;
-				border-right:1px solid $greyE;
 				color:$grey7;
 
 				&:hover {
