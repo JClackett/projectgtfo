@@ -6,7 +6,7 @@ Sidebar
 .sidebar {
 	height:calc(100% - 60px);     // Need to sort this out
 	@extend .group;
-	background-color: $dark-blue;
+	background-color: $darker-blue;
 	width: 300px;
 	position: fixed;
 	right:-300px;
@@ -52,7 +52,8 @@ Sidebar
 					color:$greyE;
 					padding:5px 10px;
 					border:1px solid $greyE;
-					@include border-radius(6px);
+					background-color: $dark-blue;
+					@include border-radius(4px);
 				}
 			}
 
