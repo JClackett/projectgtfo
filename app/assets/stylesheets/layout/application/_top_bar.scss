@@ -1,0 +1,156 @@
+.l-application {
+/* --------------------------------------------------
+   Topbar
+-------------------------------------------------- */
+.top-bar {
+	width: 100%;
+	@include box-shadow(0px,0px,2px,1px,rgba(0,0,0,0.2));
+	background-color: #FFF;
+	z-index: 1;
+	height: 60px;	
+		
+	/* --------------------------------------------------
+	   Search
+	-------------------------------------------------- */
+	.search-wrapper {
+		text-align: center;	
+		position: relative;
+		float: left;
+
+		.search-icon {
+			position: absolute;
+			right: 10px;
+			line-height: 25px;
+		}
+
+		.search-form {
+			width: 200px ;
+			
+			@include breakpoint(medium){
+				width: 250px;
+			}
+		}
+
+		.search-input {
+			@include border-radius(15px);
+			background-color: #F8F8F8;
+			border: 1px solid $greyC;
+			line-height: 25px;
+			height: 25px;
+			padding-left: 10px;
+			width: 200px;
+			color: $grey5;
+			@include font-size(13);
+			
+			@include breakpoint(medium){
+				width: 250px;
+			}
+		}	
+
+		::-webkit-input-placeholder {
+			font-family: "Helvetica Neue", "Helvetica", sans-serif;
+			@include font-size(13);
+			color: $grey8;
+		}
+
+		.search-input:focus {
+			outline:none;
+		}
+	}
+
+
+	/* --------------------------------------------------
+	   Login Section
+	-------------------------------------------------- */
+	.login-section {
+
+		// User Avatar Image
+		.current-user {
+
+			img {
+				cursor:pointer;
+				display:block;
+				height: 40px;
+				width: 40px;
+				margin:10px;
+				border-radius:50%;
+				border:1px solid $greyA;
+				
+				&:hover {
+					@include box-shadow(0px,0px,0px,3px, $blue);
+					border:1px solid $blue;
+				}
+			}
+		}
+
+		/* --------------------------------------------------
+		   Pop up Section
+		-------------------------------------------------- */
+		.user-popup {
+			display:none;
+			position:absolute;
+			margin: 0;
+			text-align: center;
+			right:60px;
+			top: 5px;
+			z-index: 2;
+			background-color: $white;
+
+			a {
+				text-decoration:none;
+				padding: 10px 5px;
+				margin: 0;
+				font-weight: 500;
+				@include font-size(12);
+				text-transform: uppercase;
+				line-height: 50px;
+				border-left:1px solid $greyE;
+				border-right:1px solid $greyE;
+				color:$grey7;
+
+				&:hover {
+					color:$blue;
+				}
+
+			}
+
+		}
+
+		/* --------------------------------------------------
+		   Login Section
+		-------------------------------------------------- */
+		.user-login {
+			position:absolute;
+			margin: 0;
+			text-align: center;
+			right:0px;
+			top: 5px;
+			z-index: 2;
+			background-color: $white;
+
+			a {
+				text-decoration:none;
+				padding: 10px 5px;
+				margin: 0;
+				font-weight: 500;
+				@include font-size(12);
+				text-transform: uppercase;
+				line-height: 50px;
+				border-left:1px solid $greyE;
+				border-right:1px solid $greyE;
+				color:$grey7;
+
+				&:hover {
+					color:$blue;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+}

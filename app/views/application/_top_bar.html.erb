@@ -1,0 +1,52 @@
+<header class="top-bar right">
+
+	<div class="top-section">
+
+<!-- 		<div class="search-wrapper">
+
+				<i class="fa fa-search search-icon"></i>
+
+				<form action="<%= root_path %>" method="get" class="search-form" >
+
+					<%= text_field_tag :q, params[:s], placeholder: "Search", class: "search-input"%>
+					<%= submit_tag "Search", :style => "display: none;", :name  => nil %>
+
+				</form>
+
+		</div>
+ -->	
+		<div class="login-section right">
+			
+			<% if user_signed_in? %>
+
+			           <div class="current-user" >
+
+				           	<div class="user-initials">
+				           		<!-- Need to make Users Controller -->
+				           	</div>
+
+				           	<%= gravatar_image_tag(current_user.email.gsub('spam', 'mdeering'), :alt => current_user.email) %>
+			           </div>
+
+			           <div class="user-popup">
+
+			                     	<%= link_to 'logout', destroy_user_session_path, method: :delete %>
+
+			           </div>	
+
+		           <% else %>
+
+			           <div class="user-login">
+
+			                     	<%= link_to 'login', new_user_session_path, method: :delete %>
+
+			           </div>	
+
+			<% end %>
+
+		</div>
+	
+	</div>
+
+</header>
+

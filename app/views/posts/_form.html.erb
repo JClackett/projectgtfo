@@ -1,33 +1,36 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= provide(:title, "New Post" ) %>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="outer-form">
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :video %><br>
-    <%= f.text_field :video %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+	<%= form_for(@post) do |f| %>
+		<% if @post.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+				<ul>
+					<% @post.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="field-row">
+			<%= f.text_field :title, placeholder: "Title" , autofocus: true  %>
+		</div>
+
+		<div class="field-row">
+			<%= f.text_area :text , placeholder: "Text" %>
+		</div>
+
+		<div class="field-row">
+			<%= f.text_field :video, placeholder: "Video" %>
+		</div>
+
+		<div class="form-actions">
+			<%= f.button "Add post", type: 'submit', class: "form-submit-button", data: { disable_with: 'Submitting' } %>
+		</div>
+
+	<% end %>
+
+</div>

@@ -13,4 +13,30 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require_tree.
+
+/* --------------------------------------------------
+   Hide Flash Messages
+-------------------------------------------------- */
+
+$(document).on('ready page:load', function () {
+  $("#flash_messages").delay(1500).fadeOut(600);
+});
+
+/* --------------------------------------------------
+   User Profile Popup
+-------------------------------------------------- */
+
+$(document).on('ready page:load', function () {
+    $(".login-section").click(function(e) {
+        $(".user-popup").toggle();
+        e.stopPropagation();
+    });
+
+    $(document).click(function(e) {
+        if (!$(e.target).is('.user-popup, .user-popup*')) {
+            $(".user-popup").hide();
+        }
+    });
+});
+
