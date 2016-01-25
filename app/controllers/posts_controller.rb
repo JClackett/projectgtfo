@@ -6,14 +6,18 @@ class PostsController < ApplicationController
 
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :sidebar_tags, only: [:index, :new, :create, :show]
+	before_action :sidebar_tags, only: [:index, :new, :create, :show, :edit]
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # GET : Index
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	def index
-		@posts = Post.all.reverse
+		if params[:tag].present?
+			@posts = Post.joins(:tags).where(tags: { title: params[:tag] } ).all.reverse
+		else
+			@posts = Post.all.reverse
+		end
 	end
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -100,7 +104,7 @@ class PostsController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def post_params
-	  params.require(:post).permit(:title, :text, :user_id, :video, :first_name)
+	  params.require(:post).permit(:title, :text, :user_id, :video, :first_name, tag_ids: [] )
 	end
 
 end

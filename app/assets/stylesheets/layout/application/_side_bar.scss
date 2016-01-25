@@ -33,9 +33,9 @@ Sidebar
 	}
 
 	/* --------------------------------------------------
-	   Main Nav
+	   Tags
 	-------------------------------------------------- */
-	.main-nav {
+	.sidebar-tags {
 		text-align: left;
 		// border-top: 1px solid $greyA;
 		// border-bottom: 1px solid $greyA;
@@ -48,6 +48,7 @@ Sidebar
 			
 			li {	
 				float: left;
+				margin-right: 5px;
 				a {
 					color:$greyE;
 					padding:5px 10px;

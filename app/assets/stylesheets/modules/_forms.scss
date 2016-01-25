@@ -3,6 +3,153 @@ Form Layout Template
 -------------------------------------------------- */
 .l-application {
 
+/* --------------------------------------------------
+   New Post
+-------------------------------------------------- */
+    
+	.post-form {
+		@extend .group;
+		background-color: #fff;
+		min-width: 300px;
+		padding: 20px;
+		width: 98%;
+		margin: 1%;
+		
+		@include breakpoint(medium-large) {
+		}
+		
+		input[type="submit"],
+		input[type="text"], 
+		input[type="email"], 
+		input[type="password"], 
+		input[type="date"], 
+		input[type="tel"], 
+		input[type="url"], 
+		input[type="number"], 
+		input[type="search"], 
+		select, 
+		textarea { 
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border: none;
+			padding: 10px;
+			font-size: 14px;
+			font-size: 1.4rem;
+			width: 100%;
+			color:$grey6;
+		}
+
+		.field-row {
+
+			input {
+				width:100%;
+				margin: 5px 0;
+				color:$grey5;
+			}
+		
+		}
+
+		.post-title-area {
+			input {
+				@include font-size(24);
+				color:$grey3;
+				font-weight: 500;
+			}
+		}
+
+		.post-text-area {
+			textarea {
+				height: 300px;
+				resize:none;
+			}
+		}
+
+
+		.form-actions {
+			@extend .group;
+			text-align: center;
+			
+			.form-submit-button {
+				float: left;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				background-color: $dark-blue;
+				@include border-radius(4px);
+				background-clip: padding-box;
+				border:none;
+				padding: 10px;
+				@include font-size(12);
+				width: 20%;
+				margin: 10px 0px;
+				color:$white;
+				text-transform: uppercase;
+				font-weight: 600;
+				font-variant: small-caps;
+				-webkit-transition:ease-in all 100ms;
+				transition:ease-in all 100ms;
+				
+				
+
+				&:hover {
+					background-color: lighten($dark-blue, 10%);
+				}
+			}
+		}
+
+		.error-form {
+
+			ul {
+				@extend .group;
+				margin-bottom: 10px;
+				li {	
+					float: right;
+					padding: 5px;
+					margin: 3px;
+					@include font-size(15);
+					@include border-radius(3px);
+					color: #A94442;;
+					background-color: #f2dede;
+					border: 1px solid #ebccd1;
+				}
+			}
+		}
+
+		.checkbox-field {
+			padding: 0;
+			margin: 10px 0;
+
+			input[type=checkbox] {
+				display:none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.checkbox_label {
+				color:$grey5;
+				padding:5px 10px;
+				border:1px solid $grey8;
+				@include border-radius(4px);
+				
+				&:hover {
+					border:1px solid $dark-blue;
+				}
+
+			}
+
+			.check_box:checked + .checkbox_label {
+				background-color: $dark-blue;
+				color: $white;
+				border:1px solid $dark-blue;	
+			}
+		}
+		
+	}
+
+/* --------------------------------------------------
+   Devise
+-------------------------------------------------- */
 	.outer-form {
 		@extend .group;
 		background-color: #fff;
@@ -17,7 +164,17 @@ Form Layout Template
 			width: 50%;
 		}
 		
-		input[type="submit"],input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="tel"], input[type="url"], input[type="number"], input[type="search"], select, textarea { 
+		input[type="submit"],
+		input[type="text"], 
+		input[type="email"], 
+		input[type="password"], 
+		input[type="date"], 
+		input[type="tel"], 
+		input[type="url"], 
+		input[type="number"], 
+		input[type="search"], 
+		select, 
+		textarea { 
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			appearance: none;
@@ -41,6 +198,7 @@ Form Layout Template
 			}
 		
 		}
+
 
 		.form-actions {
 			@extend .group;
@@ -76,21 +234,20 @@ Form Layout Template
 
 		.error-form {
 
-				ul {
-					@extend .group;
-					margin-bottom: 10px;
-					li {	
-						float: right;
-						padding: 5px;
-						margin: 3px;
-						@include font-size(15);
-						@include border-radius(3px);
-						color: #A94442;;
-						background-color: #f2dede;
-						border: 1px solid #ebccd1;
-					}
+			ul {
+				@extend .group;
+				margin-bottom: 10px;
+				li {	
+					float: right;
+					padding: 5px;
+					margin: 3px;
+					@include font-size(15);
+					@include border-radius(3px);
+					color: #A94442;;
+					background-color: #f2dede;
+					border: 1px solid #ebccd1;
 				}
+			}
 		}
-
 	}
 }

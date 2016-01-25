@@ -16,7 +16,7 @@
 		cursor: pointer;
 		
 		h3 {
-			line-height: 35px;
+			line-height: 36px;
 			font-weight: 500;
 			color:$dark-blue;
 			letter-spacing: 2px;
@@ -28,19 +28,20 @@
 	}
 
 	/* --------------------------------------------------
-	   New Post Button
+	   New Post Button / New Tag Button
 	-------------------------------------------------- */
-	.new-post-button {
+	.new-post-button , .new-tag-button {
 		
 		a {	
 			cursor: pointer;
-			line-height: 60px;
+			line-height: 55px;
 			font-weight: 500;
 			color:$dark-blue;
-			text-transform: capitalize;
+			font-variant: small-caps;
 			padding: 5px;
 			margin: 0 20px;
 			@include no-select(none);
+			@include font-size(18);
 			
 			&:hover {
 				border-bottom:1px solid $dark-blue;
