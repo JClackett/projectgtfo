@@ -30,7 +30,7 @@ has_many :posts, through: :post_tags
 # Validations
 # ------------------------------------------------------------------------------
 
-
+validates_presence_of [:title] , :message => "can't be nothing?"
 
 # ------------------------------------------------------------------------------
 # Callbacks
