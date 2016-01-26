@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     # Posts
   # ----------------------------------------------------------
 
-  resources :posts
+  resources :posts, except: [:show]
 
   root to: 'posts#index' 
   

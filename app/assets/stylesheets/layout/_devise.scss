@@ -35,7 +35,7 @@ Devise sign in / Register
 		}
 
 		.devise-banner {
-			background: #4D9DE0;
+			background: $dark-blue;
 
 			@include breakpoint(medium) {
 				width: 300px;
@@ -151,7 +151,7 @@ Devise sign in / Register
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
-				background-color: $green;
+				background-color: $dark-blue;
 				@include border-radius(4px);
 				background-clip: padding-box;
 				border:none;
@@ -168,7 +168,7 @@ Devise sign in / Register
 				
 
 				&:hover {
-					background-color: darken($green, 5%);
+					background-color: lighten($dark-blue, 5%);
 				}
 			}
 		}

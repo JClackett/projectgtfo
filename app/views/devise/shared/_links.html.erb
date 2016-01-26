@@ -3,7 +3,7 @@
   <ul>
 
     <%- if controller_name != 'sessions' %>
-      <li><%= link_to "log in", login_path%></li>
+      <li><%= link_to "log in", login_path %></li>
     <% end -%>
 
     <%- if devise_mapping.registerable? && controller_name != 'registrations' %>

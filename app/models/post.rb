@@ -31,7 +31,7 @@ has_many :tags, through: :post_tags, dependent: :destroy
 # Validations
 # ------------------------------------------------------------------------------
 
-
+validates_presence_of [:title, :text] , :message => "can't be empty"
 
 # ------------------------------------------------------------------------------
 # Callbacks
