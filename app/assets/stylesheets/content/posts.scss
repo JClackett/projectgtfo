@@ -1,102 +1,132 @@
 /* --------------------------------------------------
    Posts
 -------------------------------------------------- */
- 
-.post-wrapper {
+
+// Timeline
+#timeline {
+	width: 100%;
+  	margin: 0px auto;
 	position: relative;
-	width:75%;
-	margin: 10px;
-	padding: 10px;	
-	background-color: $white;
-	// height: 120px;
-	@extend .group;
-	@include box-shadow(0px,0px,2px,0px, rgba(0,0,0,0.1));	
-	@include breakpoint(medium) {
-		width:50%;
+  	padding: 10px;
+	@include prefix(transition, all .4s ease);
+
+	&:before {
+		content:"";
+		width: 3px;
+		height: 100%;
+		background: $dark-blue;
+		left: 50%;
+		top: 0;
+		position: absolute;
 	}
 
-	&:hover {
-		@include box-shadow(0px,0px,2px,0px, rgba(0,0,0,0.2));
-	}
-
-	/* --------------------------------------------------
-	   Post Title
-	-------------------------------------------------- */
-	
-	.post-title {
-		float: left;
-		
-		h3 {
-			color:$grey3;
-			margin: 0;
-		}
-		
-	}
-
-	/* --------------------------------------------------
-	   Post Creator
-	-------------------------------------------------- */
-
-	.post-creator {
-		float: right;
-		
-		p {
-			@include font-size(14);
-			color:$greyB;
-			cursor:pointer;
-			-webkit-transition:ease-in all 100ms;
-						
-			&:hover {
-				color:darken($greyB, 20%);
-			}
-		}
-	}
-
-	/* --------------------------------------------------
-	   Post Text
-	-------------------------------------------------- */
-
-	.post-text {
-		display:inline-block;
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
 		width: 100%;
-		
-		p {
-			color:$grey8;		
-		}
 	}
+	
+	.timeline-item {
+		margin-bottom: 30px;
+		position: relative;
+		@extend .group;
 
-	/* --------------------------------------------------
-	   Post DateTime
-	-------------------------------------------------- */
-	    
-	.post-datetime {
-		float: left;
-		
-		p {
-			color:$greyC;
+		.timeline-icon {
+			background: $dark-blue;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			overflow: hidden;
+			margin-left: -23px;
+			@include prefix(border-radius, 50%);
+
+			svg {
+				position: relative;
+				top: 14px;
+				left: 14px;
+			}
 		}
-	}
 
-	/* --------------------------------------------------
-	   Post Delete
-	-------------------------------------------------- */
+		.timeline-content {
+			width: 45%;
+			background: #fff;
+			padding: 20px;
+			@include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
+			@include prefix(border-radius, 5px);
+			@include prefix(transition, all .3s ease);
 
-	.post-delete {	
-		float: right;
-
-		i {
-			color:$red;
-			float: right;
-
-			&:hover {
-				-webkit-transition:ease-in all 100ms;
-				-webkit-transform: scale(1.3,1.3); /* Safari */
-				transform: scale(1.3,1.3);
+			h2 {
+				padding: 15px;
+				background: $dark-blue;
+				color: #fff;
+				margin: -20px -20px 0 -20px;
+				font-weight: 300;
+				@include prefix(border-radius, 3px 3px 0 0);
 			}
 
 		}
-
 	}
+}
 
+.timeline-item:nth-child(even) .timeline-content{
+	float: right;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		right: 45%;
+		top: 20px;
+		width: 0; 
+		height: 0; 
+		border-top: 7px solid transparent;
+		border-bottom: 7px solid transparent; 
+		border-right:7px solid $dark-blue; 
+	}
+}
 
+.timeline-item:nth-child(odd) .timeline-content{
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 45%;
+		top: 20px;
+		width: 0; 
+		height: 0; 
+		border-top: 7px solid transparent;
+		border-bottom: 7px solid transparent; 
+		border-left:7px solid $dark-blue; 
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#timeline {
+		margin: 30px;
+		padding: 0px;
+  		width: 90%;
+		&:before {
+			left: 0;
+		}
+		
+		.timeline-item {
+			.timeline-content {
+				width: 90%;
+				float: right;
+				
+				&:before, &.right:before {
+					left: 10%;
+					margin-left: -6px;
+					border-left: 0;
+					border-right: 7px solid $dark-blue;
+				}
+			}
+
+			.timeline-icon {
+				left: 0;
+			}
+		}
+	}
 }

@@ -129,3 +129,9 @@
 	-ms-user-select: none;
 	user-select: none;
 }
+
+@mixin prefix($prop, $val) {
+	@each $prefix in '-webkit-', '-moz-', '-ms-', '' {
+		#{$prefix}#{$prop}: $val;
+	}
+}
