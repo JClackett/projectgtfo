@@ -8,6 +8,12 @@
 
 	</div>
 
+	<div class="timeline-datetime">
+
+		<p class="post-datetime"><%= timeline_datetimes(post.created_at) %></p>
+
+	</div>
+
 	<div class="timeline-content">
 
 		<h3 class="post-title"><%= post.title %></h3>
@@ -15,8 +21,6 @@
 
 		<p class="post-text"><%= post.text %></p>
 
-
-		<p class="post-datetime"><%= post.created_at %></p>
 
 		<%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
 

@@ -3,10 +3,9 @@
 -------------------------------------------------- */
 
 #timeline {
-	width: 100%;
-  	margin: auto;
+  	margin: 0 0 0 50px;
+  	padding-top: 10px;
 	position: relative;
-  	padding: 10px;
 	@include prefix(transition, all .4s ease);
 	
 	/* --------------------------------------------------
@@ -18,7 +17,7 @@
 		width: 3px;
 		height: 100%;
 		background: darken($background, 5%);
-		left: 50%;
+		left: 0;
 		top: 0;
 		position: absolute;
 	}
@@ -29,6 +28,7 @@
 	.timeline-item {
 		margin-bottom: 30px;
 		position: relative;
+		padding: 10px;
 		@extend .group;
 		
 		/* --------------------------------------------------
@@ -40,9 +40,8 @@
 			height: 50px;
 			position: absolute;
 			top: 0;
-			left: 50%;
+			left: -24px;
 			overflow: hidden;
-			margin-left: -23px;
 			@include prefix(border-radius, 50%);
 			border:3px solid $white;
 			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
@@ -61,12 +60,36 @@
 				display:block;
 			}
 		}
+
+		/* --------------------------------------------------
+		   Datetime
+		-------------------------------------------------- */
+		    
+		.timeline-datetime {
+			position: absolute;
+			left:-27px;
+			width: 55px;
+			top:60px;
+			text-align: center;
+			background-color: $white;
+			@include prefix(border-radius, 5px);
+			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
+			
+			p {
+				@include font-size(14);
+				padding: 0px 5px;
+				color:$grey8;
+			}
+
+		}
+
 		
 		/* --------------------------------------------------
 		   Post
 		-------------------------------------------------- */
 		.timeline-content {
-			width: 45%;
+			width: 95%;
+			float: right;
 			background: #fff;
 			padding: 20px;
 			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
@@ -76,11 +99,13 @@
 			&:before {
 				content: '';
 				position: absolute;
+				left: 5.5%;
 				top: 20px;
 				width: 0; 
 				height: 0; 
 				border-top: 7px solid transparent;
 				border-bottom: 7px solid transparent; 
+				border-right:7px solid $white; 
 			}
 			
 			/* --------------------------------------------------
@@ -92,7 +117,7 @@
 				background-color: $white;
 				color: $dark-blue;
 				margin: 0;
-				font-weight: 300;
+				font-weight: 600;
 				@include prefix(border-radius, 3px 3px 0 0);
 			}
 
@@ -125,56 +150,3 @@
 	}
 }
 
-/* --------------------------------------------------
-   Triangles
--------------------------------------------------- */
-
-.timeline-item {
-
-	&:nth-child(even) .timeline-content {
-		float: right;
-		&:before {
-			right: 45%;
-			border-right:7px solid $white; 
-		}
-	}
-
-	&:nth-child(odd) .timeline-content {
-		&:before {
-			left: 45%;
-			border-left:7px solid $white; 
-		}
-	}
-}
-
-/* --------------------------------------------------
-  Timeline Breakpoint
--------------------------------------------------- */
-
- @include breakpoint(neg-medium) {
-	#timeline {
-		padding: 10px 0;
-  		width: 90%;
-		&:before {
-			left: 0;
-		}
-		
-		.timeline-item {
-			.timeline-content {
-				width: 90%;
-				float: right;
-				
-				&:before {
-					left: 10%;
-					margin-left: -6px;
-					border-left: 0;
-					border-right: 7px solid $white;
-				}
-			}
-
-			.timeline-icon {
-				left: 0;
-			}
-		}
-	}
-}
