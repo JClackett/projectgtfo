@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :sidebar_tags, only: [:index, :new, :create, :edit]
+	before_action :sidebar_tags
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # GET : Index

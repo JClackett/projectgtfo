@@ -178,16 +178,14 @@
 				}
 			}
 			/* --------------------------------------------------
-			   Delete Button		       
+			   Delete & Edit Button		       
 			-------------------------------------------------- */
 			
-			.post-delete {
+			.post-delete , .post-edit {
 				position: absolute;
 				top:0;
-				right:0;
 				
 				i {
-					color:$red;
 					padding: 5px;
 
 					&:hover {
@@ -198,7 +196,58 @@
 
 				}
 			}	
+
+			.post-delete {
+				right:0;
+				i  {
+					color:$red;
+				}
+			}
+
+			.post-edit {
+				right: 20px;
+				i {
+					color:$blue;
+				}
+			}
 		}
 	}
 }
 
+
+/* --------------------------------------------------
+   Post Show Page
+-------------------------------------------------- */
+.post-show-container {
+	width: 100%;
+	background-color: $white;
+	text-align: center;
+	
+	.post-show-wrapper {
+		width: 95%;
+		margin: 0 auto;
+		padding: 20px 0;
+		
+		@include breakpoint(medium) {
+			width: 600px;
+		}
+	
+		h1 {
+			@include font-size(40);
+			color:$grey3;
+			padding: 20px;
+			
+		}
+
+		p {	
+			text-align: justify;
+			@include font-size(18);
+			color:$grey3;
+			line-height: 35px;
+		}
+		
+		img {
+			width: 80%;
+		}
+	}
+}

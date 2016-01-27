@@ -32,6 +32,16 @@
 
 			<% end %>
 
+			<%= link_to edit_post_path(post) do %>
+
+				<div class="post-edit">
+
+					<i class="fa fa-pencil"></i>
+
+				</div>
+
+			<% end %>
+
 		<% end %>
 
 		<h3 class="post-title"><%= post.title %></h3>

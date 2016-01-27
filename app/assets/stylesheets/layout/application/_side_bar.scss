@@ -36,17 +36,16 @@ Sidebar
 	   Tags
 	-------------------------------------------------- */
 	.sidebar-tags {
-		text-align: left;
 
 		ul {
 			@extend .group;
-			list-style-type: none;
 			margin: 0;
-			padding: 0;
 			
 			li {	
 				float: left;
+				text-align: center;
 				margin-right: 5px;
+				margin-bottom: 16px;
 				a {
 					color:$greyE;
 					padding:5px 10px;

@@ -1,24 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="post-show-container">
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+	<div class="post-show-wrapper">
+	
+		<h1><%= @post.title %></h1>
 
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
+		<p><%= @post.text %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
+		<% unless @post.photo.blank? %>
 
-<p>
-  <strong>Video:</strong>
-  <%= @post.video %>
-</p>
+	  			<%= image_tag(@post.photo.url(:original))%>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+		<% end %>
+
+	</div>
+
+</div>
