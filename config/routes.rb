@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   # ----------------------------------------------------------
     # Static Pages
   # ----------------------------------------------------------
+  get 'application/story', :path => "the_story"
 
 end

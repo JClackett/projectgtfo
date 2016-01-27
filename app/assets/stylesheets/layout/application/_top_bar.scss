@@ -12,6 +12,13 @@
 	position: fixed;
 	height: 60px;	
 	
+
+	/* --------------------------------------------------
+	   Links
+	-------------------------------------------------- */
+	    
+	
+	
 	/* --------------------------------------------------
 	   Logo
 	-------------------------------------------------- */
@@ -31,9 +38,9 @@
 	}
 
 	/* --------------------------------------------------
-	   New Post Button / New Tag Button
+	   Links Buttons
 	-------------------------------------------------- */
-	.new-post-button , .new-tag-button {
+	.story-so-far, .new-post-button , .new-tag-button {
 		
 		a {	
 			cursor: pointer;
@@ -52,56 +59,6 @@
 		}
 
 	}
-		
-	/* --------------------------------------------------
-	   Search
-	-------------------------------------------------- */
-	.search-wrapper {
-		text-align: center;	
-		position: relative;
-		float: left;
-
-		.search-icon {
-			position: absolute;
-			right: 10px;
-			line-height: 25px;
-		}
-
-		.search-form {
-			width: 200px ;
-			
-			@include breakpoint(medium){
-				width: 250px;
-			}
-		}
-
-		.search-input {
-			@include border-radius(15px);
-			background-color: #F8F8F8;
-			border: 1px solid $greyC;
-			line-height: 25px;
-			height: 25px;
-			padding-left: 10px;
-			width: 200px;
-			color: $grey5;
-			@include font-size(13);
-			
-			@include breakpoint(medium){
-				width: 250px;
-			}
-		}	
-
-		::-webkit-input-placeholder {
-			font-family: "Helvetica Neue", "Helvetica", sans-serif;
-			@include font-size(13);
-			color: $grey8;
-		}
-
-		.search-input:focus {
-			outline:none;
-		}
-	}
-
 
 	/* --------------------------------------------------
 	   Login Section
@@ -118,7 +75,7 @@
 				width: 40px;
 				margin:10px;
 				border-radius:50%;
-				border:1px solid $greyA;
+				border:1px solid $white;
 				
 				&:hover {
 					@include box-shadow(0px,0px,0px,3px, $dark-blue);
@@ -130,7 +87,7 @@
 		/* --------------------------------------------------
 		  Logout Pop up Section
 		-------------------------------------------------- */
-		.user-popup {
+		.user-logout {
 			display:none;
 			position:absolute;
 			margin: 0;

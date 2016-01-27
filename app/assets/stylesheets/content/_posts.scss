@@ -1,5 +1,5 @@
 /* --------------------------------------------------
-   Posts Timeline
+   Main Timeline
 -------------------------------------------------- */
 
 #timeline {
@@ -17,9 +17,13 @@
 		width: 3px;
 		height: 100%;
 		background: darken($background, 5%);
-		left: 0;
+		left: -10px;
 		top: 0;
 		position: absolute;
+		
+		@include breakpoint(small) {
+			left: 0;
+		}
 	}
 	
 	/* --------------------------------------------------
@@ -43,11 +47,14 @@
 				height: 50px;
 				position: absolute;
 				top: 10px;
-				left: -24px;
+				left: -34px;
 				overflow: hidden;
 				@include prefix(border-radius, 50%);
 				border:3px solid $white;
 				@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
+				@include breakpoint(small){
+					left:-24px;
+				}
 				
 				img {
 					height: 44px;
@@ -91,13 +98,16 @@
 		    
 		.timeline-datetime {
 			position: absolute;
-			left:-27px;
-			width: 55px;
+			left:-36px;
+			width: 52px;
 			top:70px;
 			text-align: center;
 			background-color: $white;
 			@include prefix(border-radius, 5px);
 			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
+			@include breakpoint(small) {
+				left: -27px;
+			}
 			
 			p {
 				@include font-size(14);
@@ -109,17 +119,21 @@
 
 		
 		/* --------------------------------------------------
-		   Post
+		   The Actual Post
 		-------------------------------------------------- */
 		.timeline-content {
 			position: relative;
 			float: left;
 			background: #fff;
-			padding: 20px;
-			margin-left: 5%;
+			padding: 5px;
+			margin: 0 5%;
 			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
 			@include prefix(border-radius, 5px);
 			@include prefix(transition, all .3s ease);
+			
+			@include breakpoint(small) {
+				padding:15px;
+			}
 			
 			&:before {
 				content: '';
@@ -160,7 +174,7 @@
 			-------------------------------------------------- */
 			.post-image {
 				img {
-					height: 300px;
+					width: 100%;
 				}
 			}
 			/* --------------------------------------------------

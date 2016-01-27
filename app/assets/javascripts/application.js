@@ -29,13 +29,13 @@ $(document).on('ready page:load', function () {
 
 $(document).on('ready page:load', function () {
     $(".login-section").click(function(e) {
-        $(".user-popup").toggle();
+        $(".user-logout").toggle();
         e.stopPropagation();
     });
 
     $(document).click(function(e) {
-        if (!$(e.target).is('.user-popup, .user-popup*')) {
-            $(".user-popup").hide();
+        if (!$(e.target).is('.user-logout, .user-logout*')) {
+            $(".user-logout").hide();
         }
     });
 });

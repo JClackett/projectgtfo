@@ -12,33 +12,28 @@
 
 		</div>
 
-		<div class="new-post-button left">
-			
-			<%= link_to 'np', new_post_path %>
+		<div class="story-so-far left">
+
+			<%= link_to 'story so far' , application_story_path %>
 
 		</div>
 
-		<div class="new-tag-button left">
-			
-			<%= link_to 'nt', new_tag_path %>
+		<% if current_user.try(:admin?) %>
 
-		</div>
+			<div class="new-post-button left">
+				
+				<%= link_to 'np', new_post_path %>
 
-			
+			</div>
 
-<!-- 		<div class="search-wrapper">
+			<div class="new-tag-button left">
+				
+				<%= link_to 'nt', new_tag_path %>
 
-				<i class="fa fa-search search-icon"></i>
+			</div>
 
-				<form action="<%= root_path %>" method="get" class="search-form" >
+		<% end %>
 
-					<%= text_field_tag :q, params[:s], placeholder: "Search", class: "search-input"%>
-					<%= submit_tag "Search", :style => "display: none;", :name  => nil %>
-
-				</form>
-
-		</div>
- -->	
 		<div class="login-section right">
 			
 			<% if user_signed_in? %>
@@ -52,7 +47,7 @@
 				           	<%= gravatar_image_tag(current_user.email.gsub('spam', 'mdeering'), :alt => current_user.email) %>
 			           </div>
 
-			           <div class="user-popup">
+			           <div class="user-logout">
 
 			                     	<%= link_to 'logout', destroy_user_session_path, method: :delete %>
 
