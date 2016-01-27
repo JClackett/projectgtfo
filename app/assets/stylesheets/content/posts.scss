@@ -1,39 +1,41 @@
 /* --------------------------------------------------
-   Posts
+   Posts Timeline
 -------------------------------------------------- */
 
-// Timeline
 #timeline {
 	width: 100%;
-  	margin: 0px auto;
+  	margin: auto;
 	position: relative;
   	padding: 10px;
 	@include prefix(transition, all .4s ease);
+	
+	/* --------------------------------------------------
+	   Timeline Line
+	-------------------------------------------------- */
 
 	&:before {
 		content:"";
 		width: 3px;
 		height: 100%;
-		background: $dark-blue;
+		background: darken($background, 5%);
 		left: 50%;
 		top: 0;
 		position: absolute;
 	}
-
-	&:after {
-		content: "";
-		clear: both;
-		display: table;
-		width: 100%;
-	}
 	
+	/* --------------------------------------------------
+	   Timeline post
+	-------------------------------------------------- */
 	.timeline-item {
 		margin-bottom: 30px;
 		position: relative;
 		@extend .group;
+		
+		/* --------------------------------------------------
+		   Icon
+		-------------------------------------------------- */
 
 		.timeline-icon {
-			background: $dark-blue;
 			width: 50px;
 			height: 50px;
 			position: absolute;
@@ -42,70 +44,116 @@
 			overflow: hidden;
 			margin-left: -23px;
 			@include prefix(border-radius, 50%);
+			border:3px solid $white;
+			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
+			
+			img {
+				height: 44px;
+				width: 44px;
+			}
 
-			svg {
-				position: relative;
-				top: 14px;
-				left: 14px;
+			.post-creator {
+				position: absolute;
+				background-color: red;
+			}
+
+			&:hover .post-creator {
+				display:block;
 			}
 		}
-
+		
+		/* --------------------------------------------------
+		   Post
+		-------------------------------------------------- */
 		.timeline-content {
 			width: 45%;
 			background: #fff;
 			padding: 20px;
-			@include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
+			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
 			@include prefix(border-radius, 5px);
 			@include prefix(transition, all .3s ease);
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: 20px;
+				width: 0; 
+				height: 0; 
+				border-top: 7px solid transparent;
+				border-bottom: 7px solid transparent; 
+			}
+			
+			/* --------------------------------------------------
+			   Title
+			-------------------------------------------------- */
 
-			h2 {
-				padding: 15px;
-				background: $dark-blue;
-				color: #fff;
-				margin: -20px -20px 0 -20px;
+			.post-title {
+				padding-bottom: 5px;
+				background-color: $white;
+				color: $dark-blue;
+				margin: 0;
 				font-weight: 300;
 				@include prefix(border-radius, 3px 3px 0 0);
 			}
 
+			/* --------------------------------------------------
+			   Text
+			-------------------------------------------------- */
+				
+			.post-text {
+				color:$grey6;
+			}	
+
+			/* --------------------------------------------------
+			   Delete Button		       
+			-------------------------------------------------- */
+			
+			.post-delete {
+				i {
+					color:$red;
+					padding: 5px;
+
+					&:hover {
+						-webkit-transition:ease-in all 100ms;
+						-webkit-transform: scale(1.3,1.3); /* Safari */
+						transform: scale(1.3,1.3);
+					}
+
+				}
+			}	
 		}
 	}
 }
 
-.timeline-item:nth-child(even) .timeline-content{
-	float: right;
-	
-	&:before {
-		content: '';
-		position: absolute;
-		right: 45%;
-		top: 20px;
-		width: 0; 
-		height: 0; 
-		border-top: 7px solid transparent;
-		border-bottom: 7px solid transparent; 
-		border-right:7px solid $dark-blue; 
+/* --------------------------------------------------
+   Triangles
+-------------------------------------------------- */
+
+.timeline-item {
+
+	&:nth-child(even) .timeline-content {
+		float: right;
+		&:before {
+			right: 45%;
+			border-right:7px solid $white; 
+		}
+	}
+
+	&:nth-child(odd) .timeline-content {
+		&:before {
+			left: 45%;
+			border-left:7px solid $white; 
+		}
 	}
 }
 
-.timeline-item:nth-child(odd) .timeline-content{
+/* --------------------------------------------------
+  Timeline Breakpoint
+-------------------------------------------------- */
 
-	&:before {
-		content: '';
-		position: absolute;
-		left: 45%;
-		top: 20px;
-		width: 0; 
-		height: 0; 
-		border-top: 7px solid transparent;
-		border-bottom: 7px solid transparent; 
-		border-left:7px solid $dark-blue; 
-	}
-}
-
-@media screen and (max-width: 768px) {
+ @include breakpoint(neg-medium) {
 	#timeline {
-		margin: 30px;
-		padding: 0px;
+		padding: 10px 0;
   		width: 90%;
 		&:before {
 			left: 0;
@@ -116,11 +164,11 @@
 				width: 90%;
 				float: right;
 				
-				&:before, &.right:before {
+				&:before {
 					left: 10%;
 					margin-left: -6px;
 					border-left: 0;
-					border-right: 7px solid $dark-blue;
+					border-right: 7px solid $white;
 				}
 			}
 
