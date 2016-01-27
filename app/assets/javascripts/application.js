@@ -20,7 +20,7 @@
 -------------------------------------------------- */
 
 $(document).on('ready page:load', function () {
-  $("#flash_messages").delay(1500).fadeOut(600);
+  $("#flash_messages").delay(600).fadeOut(600);
 });
 
 /* --------------------------------------------------

@@ -88,10 +88,11 @@
 		   Post
 		-------------------------------------------------- */
 		.timeline-content {
-			width: 95%;
-			float: right;
+			// width: 95%;
+			float: left;
 			background: #fff;
 			padding: 20px;
+			margin-left: 5%;
 			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
 			@include prefix(border-radius, 5px);
 			@include prefix(transition, all .3s ease);
