@@ -27,11 +27,17 @@ belongs_to :user
 has_many :post_tags
 has_many :tags, through: :post_tags, dependent: :destroy
 
+has_attached_file :photo, styles: { small: "64x64", med: "100x100", large: "200x200" }
+
 # ------------------------------------------------------------------------------
 # Validations
 # ------------------------------------------------------------------------------
 
 validates_presence_of [:title, :text] , :message => "can't be empty"
+
+validates_attachment :photo,
+                     content_type: { content_type: ["photo/jpeg", "photo/gif", "photo/png"] }
+
 
 # ------------------------------------------------------------------------------
 # Callbacks
@@ -54,6 +60,8 @@ validates_presence_of [:title, :text] , :message => "can't be empty"
 # ------------------------------------------------------------------------------
 # Other
 # ------------------------------------------------------------------------------
+
+
 
 
 

@@ -7,6 +7,7 @@ gem 'gravatar_image_tag'
 
 gem 'mysql2'
 
+gem "paperclip", "~> 4.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
