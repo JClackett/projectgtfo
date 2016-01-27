@@ -32,34 +32,58 @@
 		@extend .group;
 		
 		/* --------------------------------------------------
-		   Icon
+		   Creator icon
 		-------------------------------------------------- */
-
+		    
 		.timeline-icon {
-			width: 50px;
-			height: 50px;
-			position: absolute;
-			top: 0;
-			left: -24px;
-			overflow: hidden;
-			@include prefix(border-radius, 50%);
-			border:3px solid $white;
-			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
-			
-			img {
-				height: 44px;
-				width: 44px;
-			}
+			@extend .group;
 
-			.post-creator {
+			.creator-image {
+				width: 50px;
+				height: 50px;
 				position: absolute;
-				background-color: red;
+				top: 10px;
+				left: -24px;
+				overflow: hidden;
+				@include prefix(border-radius, 50%);
+				border:3px solid $white;
+				@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
+				
+				img {
+					height: 44px;
+					width: 44px;
+				}
 			}
 
-			&:hover .post-creator {
+			.creator-name {
+				background-color: $dark-blue;
+				color:$white;
+				top:-10px;
+				left: -20px;
+				padding: 2px 5px;
+				position: absolute;
+				@include border-radius(3px);
+
+				
+				&:before {
+					content: '';
+					position: absolute;
+					left: 10px;
+					top: 25px;
+					width: 0; 
+					height: 0; 
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent; 
+					border-top:5px solid $dark-blue; 	
+				}
+			}
+
+			&:hover .creator-name {
 				display:block;
 			}
 		}
+
+		
 
 		/* --------------------------------------------------
 		   Datetime
@@ -69,7 +93,7 @@
 			position: absolute;
 			left:-27px;
 			width: 55px;
-			top:60px;
+			top:70px;
 			text-align: center;
 			background-color: $white;
 			@include prefix(border-radius, 5px);
@@ -88,7 +112,7 @@
 		   Post
 		-------------------------------------------------- */
 		.timeline-content {
-			// width: 95%;
+			position: relative;
 			float: left;
 			background: #fff;
 			padding: 20px;
@@ -100,7 +124,7 @@
 			&:before {
 				content: '';
 				position: absolute;
-				left: 5.5%;
+				left: -6px;
 				top: 20px;
 				width: 0; 
 				height: 0; 
@@ -128,13 +152,26 @@
 				
 			.post-text {
 				color:$grey6;
+				padding-bottom: 5px;
 			}	
 
+			/* --------------------------------------------------
+			   Image
+			-------------------------------------------------- */
+			.post-image {
+				img {
+					height: 300px;
+				}
+			}
 			/* --------------------------------------------------
 			   Delete Button		       
 			-------------------------------------------------- */
 			
 			.post-delete {
+				position: absolute;
+				top:0;
+				right:0;
+				
 				i {
 					color:$red;
 					padding: 5px;

@@ -37,8 +37,6 @@ Sidebar
 	-------------------------------------------------- */
 	.sidebar-tags {
 		text-align: left;
-		// border-top: 1px solid $greyA;
-		// border-bottom: 1px solid $greyA;
 
 		ul {
 			@extend .group;
@@ -55,7 +53,12 @@ Sidebar
 					border:1px solid $greyE;
 					background-color: $dark-blue;
 					@include border-radius(4px);
+					
+					&:hover {
+						background-color: darken($dark-blue, 2%);
+					}
 				}
+
 			}
 
 		}

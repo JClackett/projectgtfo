@@ -2,9 +2,13 @@
 
 	<div class="timeline-icon">
 
-		<%= gravatar_image_tag(post.user.email.gsub('spam', 'mdeering')) %>
+		<div class="creator-image">
 
-		<p class="post-creator hidden"><%= post.user.first_name %></p>
+			<%= gravatar_image_tag(post.user.email.gsub('spam', 'mdeering')) %>
+
+		</div>
+
+		<p class="creator-name hidden"><%= post.user.first_name %></p>
 
 	</div>
 
@@ -16,24 +20,32 @@
 
 	<div class="timeline-content">
 
+		<% if current_user.try(:admin?) %>
+
+			<%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+
+				<div class="post-delete">
+
+					<i class="fa fa-times"></i>
+
+				</div>
+
+			<% end %>
+
+		<% end %>
+
 		<h3 class="post-title"><%= post.title %></h3>
 
 
 		<p class="post-text"><%= post.text %></p>
+
+		<div class="post-image">
 		
-		<% unless post.photo.blank? %>
-  			<%= image_tag(post.photo.url(:original))%>
-		<% end %>
+			<% unless post.photo.blank? %>
+	  			<%= image_tag(post.photo.url(:original))%>
+			<% end %>
 
-		<%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
-
-			<div class="post-delete">
-
-				<i class="fa fa-times"></i>
-
-			</div>
-
-		<% end %>
+		</div>
 
 	</div>
 

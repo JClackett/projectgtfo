@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127115809) do
+ActiveRecord::Schema.define(version: 20160127152919) do
 
   create_table "post_tags", force: :cascade do |t|
     t.integer  "post_id",    limit: 4
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160127115809) do
     t.datetime "updated_at",                                      null: false
     t.string   "first_name",             limit: 255
     t.string   "last_name",              limit: 255
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
