@@ -22,6 +22,12 @@
 		<p class="post-text"><%= post.text %></p>
 
 
+		<p class="post-datetime"><%= post.created_at %></p>
+		
+		<% unless post.photo.blank? %>
+  			<%= image_tag(post.photo.url(:large))%>
+		<% end %>
+
 		<%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
 
 			<div class="post-delete">
