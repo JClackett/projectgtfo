@@ -43,23 +43,38 @@
 			<% end %>
 
 		<% end %>
-
-		<h3 class="post-title"><%= post.title %></h3>
-
-
-		<p class="post-text"><%= post.text %></p>
-
-		<div class="link-container">
-			<%= embed(post.video) %>
-		</div>
-
-		<div class="post-image">
 		
-			<% unless post.photo.blank? %>
-	  			<%= image_tag(post.photo.url(:original))%>
-			<% end %>
+		<% if post.title? %>
 
-		</div>
+			<h3 class="post-title"><%= post.title %></h3>
+
+		<% end %>
+		
+		<% if  post.text? %>
+
+			<p class="post-text"><%= post.text %></p>
+		
+		<% end %>
+		
+		<% if  post.video? %>
+
+			<div class="post-video">
+
+				<%= embed(post.video) %>
+				
+			</div>
+
+		<% end %>
+
+		<% if post.photo? %>
+
+			<div class="post-image">
+
+	  			<%= image_tag(post.photo.url(:original))%>
+
+	  		</div>
+
+		<% end %>
 
 	</article>
 

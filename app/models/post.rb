@@ -33,7 +33,7 @@ has_attached_file :photo
 # Validations
 # ------------------------------------------------------------------------------
 
-validates_presence_of [:title, :text] , :message => "can't be empty"
+# validates_presence_of [:title, :text] , :message => "can't be empty"
 
 validates_attachment :photo, content_type: { content_type: ["image/jpeg", "image/gif", "image/png",  "image/jpg"] }
 
