@@ -43,27 +43,32 @@
 			<% end %>
 
 		<% end %>
+
 		
 		<% if post.title? %>
 
 			<h3 class="post-title"><%= post.title %></h3>
 
 		<% end %>
+
 		
 		<% if  post.text? %>
 
 			<p class="post-text"><%= post.text %></p>
 
 		<% end %>
+
 		
 		<% if post.photo? %>
 
 			<div class="post-image">
 
 	  			<%= image_tag(post.photo.url(:original))%>
+
 	  		</div>
 
 		<% end %>
+		
 
 	</article>
 
