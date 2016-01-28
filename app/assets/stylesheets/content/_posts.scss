@@ -182,9 +182,15 @@
 				
 			.post-text {
 				color:$grey6;
-				padding: 20px;
+				padding: 10px;
 				text-align: justify;
-				line-height: 20px;
+				line-height: 28px;
+				@include font-size(18);
+				letter-spacing:0px;
+				
+				@include breakpoint(medium) {
+					padding: 30px;
+				}
 			}	
 
 			/* --------------------------------------------------
