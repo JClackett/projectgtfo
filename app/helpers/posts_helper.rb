@@ -6,7 +6,7 @@ module PostsHelper
 		elsif date.to_date == Date.yesterday
 			"Yesterday"
 		elsif (date > Date.today - 7) && (date < Date.yesterday)
-			date.strftime("%a")
+			date.strftime("%A")
 		else
 			date.strftime("%e %h")
 		end
@@ -19,3 +19,4 @@ module PostsHelper
   		end
   	end
 end
+
