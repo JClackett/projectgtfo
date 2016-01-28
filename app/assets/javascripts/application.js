@@ -46,10 +46,10 @@ $(document).on('ready page:load', function () {
 -------------------------------------------------- */
 $(document).on('ready page:load', function () {
 
-  $('article').readmore({
+  $('article .post-text').readmore({
     speed: 75,
     embedCSS: false,
-    collapsedHeight: 250,
+    collapsedHeight: 200,
     lessLink: '<a href="#" class="post-read-link">Read Less</a>',
     moreLink: '<a href="#" class="post-read-link">Read More</a>'
   });
