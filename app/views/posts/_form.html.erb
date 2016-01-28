@@ -22,7 +22,11 @@
 		</div>
 
 		<div class="field-row video-url">
-		    <%= f.text_field :video, placeholder:'Video' , class: 'post-url-field input' %>
+		    <%= f.text_field :video, placeholder: 'Insert Video' , class: 'post-url-field input' %>
+		</div>
+
+		<div class="image-attachment">
+			<%= f.file_field :photo %>
 		</div>
 
 		<div class="field-row checkbox-field">
@@ -30,10 +34,6 @@
 				<%= b.check_box(class: 'check_box') %>
 				<%= b.label(class: "checkbox_label") %>
 			<% end %>
-		</div>
-
-		<div class="image-attachment">
-			<%= f.file_field :photo %>
 		</div>
 
 		<div class="form-actions">

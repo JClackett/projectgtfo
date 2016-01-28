@@ -9,7 +9,7 @@ Form Layout Template
     
 	.post-form {
 		@extend .group;
-		background-color: #fff;
+		background-color: $white;
 		min-width: 300px;
 		padding: 20px;
 		width: 98%;
@@ -37,36 +37,101 @@ Form Layout Template
 			font-size: 14px;
 			font-size: 1.4rem;
 			width: 100%;
-			color:$grey6;
 		}
 
 		.field-row {
 			input {
 				width:100%;
 				margin: 5px 0;
-				color:$grey5;
 			}
 		}
 
+		/* --------------------------------------------------
+		   Title 
+		-------------------------------------------------- */
+		    
 		.post-title-area {
-			float: left;
 			
 			input {
 				@include font-size(24);
 				color:$grey3;
 				font-weight: 500;
-				width: 400px;
 			}
 		}
 
+		/* --------------------------------------------------
+		   Text Area
+		-------------------------------------------------- */
+		    
 		.post-text-area {
 			textarea {
 				height: 300px;
 				resize:none;
+				color:$grey3;
 			}
 		}
 
+		/* --------------------------------------------------
+		   Video
+		-------------------------------------------------- */
+		    
+		.video-url {
+			input {
+				color:$blue;
+			}
+		}
+		
+		/* --------------------------------------------------
+		   Image
+		-------------------------------------------------- */
+		    
+		.image-attachment {
+			input {
+				color:$red;
+			}
+			
+		}
 
+		/* --------------------------------------------------
+		   Tag Checkbox Field
+		-------------------------------------------------- */
+
+		.checkbox-field {
+			text-align: center;
+			@extend .group;
+			margin: 10px;
+
+			input[type=checkbox] {
+				display:none;
+				margin: 0;
+				padding: 0;
+			}
+
+			.checkbox_label {
+				color:$dark-blue;
+				float: none;
+				display:inline-block;
+				padding:5px 10px;
+				margin:2px;
+				border:1px solid $dark-blue;
+				@include border-radius(4px);
+				
+				&:hover {
+					@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
+				}
+
+			}
+
+			.check_box:checked + .checkbox_label {
+				background-color: $dark-blue;
+				color: $white;
+				border:1px solid $dark-blue;	
+			}
+		}
+		
+		/* --------------------------------------------------
+		   Add Post Button
+		-------------------------------------------------- */
 		.form-actions {
 			@extend .group;
 			text-align: center;
@@ -96,6 +161,10 @@ Form Layout Template
 			}
 		}
 
+		/* --------------------------------------------------
+		   Error Notices
+		-------------------------------------------------- */
+
 		.error-form {
 			float: right;
 
@@ -112,35 +181,6 @@ Form Layout Template
 					background-color: #f2dede;
 					border: 1px solid #ebccd1;
 				}
-			}
-		}
-
-		.checkbox-field {
-			padding: 0;
-			margin: 10px 0;
-
-			input[type=checkbox] {
-				display:none;
-				margin: 0;
-				padding: 0;
-			}
-
-			.checkbox_label {
-				color:$grey5;
-				padding:5px 10px;
-				border:1px solid $grey8;
-				@include border-radius(4px);
-				
-				&:hover {
-					border:1px solid $dark-blue;
-				}
-
-			}
-
-			.check_box:checked + .checkbox_label {
-				background-color: $dark-blue;
-				color: $white;
-				border:1px solid $dark-blue;	
 			}
 		}
 		
