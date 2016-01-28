@@ -55,10 +55,20 @@
 		<% if  post.text? %>
 
 			<p class="post-text"><%= post.text %></p>
-
+		
 		<% end %>
 
 		
+		<% if  post.video? %>
+
+			<div class="post-video">
+
+				<%= embed(post.video) %>
+				
+			</div>
+
+		<% end %>
+
 		<% if post.photo? %>
 
 			<div class="post-image">
