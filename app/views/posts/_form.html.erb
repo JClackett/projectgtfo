@@ -21,9 +21,9 @@
 			<%= f.text_area :text , placeholder: "What have you got to say ..." %>
 		</div>
 
-<!-- 		<div class="field-row">
-			<%= f.text_field :video, placeholder: "Video" %>
-		</div> -->
+		<div class="field-row video-url">
+		    <%= f.text_field :video, placeholder:'Video' , class: 'post-url-field input' %>
+		</div>
 
 		<div class="field-row checkbox-field">
 			<%= f.collection_check_boxes( :tag_ids, Tag.all, :id, :title)  do |b| %> 

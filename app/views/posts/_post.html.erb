@@ -49,6 +49,10 @@
 
 		<p class="post-text"><%= post.text %></p>
 
+		<div class="link-container">
+			<%= embed(post.video) %>
+		</div>
+
 		<div class="post-image">
 		
 			<% unless post.photo.blank? %>
