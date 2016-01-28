@@ -17,7 +17,7 @@
 		width: 3px;
 		height: 100%;
 		background: darken($background, 5%);
-		left: -10px;
+		left: -20px;
 		top: 0;
 		position: absolute;
 		
@@ -27,13 +27,17 @@
 	}
 	
 	/* --------------------------------------------------
-	   Timeline post
+	   Timeline post 
 	-------------------------------------------------- */
 	.timeline-item {
-		margin-bottom: 30px;
+		margin-bottom: 10px;
 		position: relative;
 		padding: 10px;
 		@extend .group;
+		
+		@include breakpoint(small){
+			margin-bottom: 30px;
+		}
 		
 		/* --------------------------------------------------
 		   Creator icon
@@ -41,25 +45,44 @@
 		    
 		.timeline-icon {
 			@extend .group;
+			
+			@include breakpoint(small){
+				&:hover .creator-name {
+					display:block;
+				}	
+			}
+
 
 			.creator-image {
-				width: 50px;
-				height: 50px;
+				width: 30px;
+				height: 30px;
 				position: absolute;
-				top: 10px;
+				top: 20px;
 				left: -34px;
 				overflow: hidden;
+				border:2px solid $white;
 				@include prefix(border-radius, 50%);
-				border:3px solid $white;
 				@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
-				@include breakpoint(small){
-					left:-24px;
-				}
 				
 				img {
-					height: 44px;
-					width: 44px;
+					height: 26px;
+					width: 26px;
 				}
+				
+				@include breakpoint(small){
+					left:-24px;
+					top: 10px;
+					border:3px solid $white;
+					width: 50px;
+					height: 50px;
+					
+					img {
+						width: 44px;
+						height: 44px;
+					}
+
+				}
+				
 			}
 
 			.creator-name {
@@ -84,10 +107,6 @@
 					border-top:5px solid $dark-blue; 	
 				}
 			}
-
-			&:hover .creator-name {
-				display:block;
-			}
 		}
 
 		
@@ -98,22 +117,31 @@
 		    
 		.timeline-datetime {
 			position: absolute;
-			left:-36px;
-			width: 60px;
-			top:70px;
-			@include breakpoint(small) {
-				left: -27px;
-			}
+			left:-45px;
+			width: 50px;
+			top:55px;
 			
 			p {
 				@include prefix(border-radius, 5px);
 				@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
 				text-align: center;
 				background-color: $white;
-				@include font-size(12);
+				@include font-size(10);
 				padding: 0px 2px;
 				color:$grey8;
 			}
+
+			@include breakpoint(small) {
+				left: -27px;
+				top: 70px;
+				width: 60px;
+				
+				p {
+					@include font-size(12);
+				}
+			}
+			
+
 
 		}
 
@@ -142,12 +170,16 @@
 			float: left;
 			background: #fff;
 			padding: 5px;
-			margin: 0 5%;
+			margin: 0;
 			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
 			@include prefix(border-radius, 5px);
 			@include prefix(transition, all .3s ease);
 			
 			@include breakpoint(small) {
+				margin: 0 5%;
+			}
+
+			@include breakpoint(medium) {
 				padding:15px;
 			}
 			
@@ -168,12 +200,18 @@
 			-------------------------------------------------- */
 
 			.post-title {
-				padding: 20px 20px 0px 20px;
+				padding: 10px 10px 20px 10px;
 				background-color: $white;
 				color: $dark-blue;
 				margin: 0;
 				font-weight: 600;
+				@include font-size(14);
 				@include prefix(border-radius, 3px 3px 0 0);
+				
+				@include breakpoint(small) {
+					@include font-size(18);
+					padding: 20px 20px 30px 20px;
+				}
 			}
 
 			/* --------------------------------------------------
@@ -182,15 +220,22 @@
 				
 			.post-text {
 				color:$grey6;
-				padding: 10px;
+				padding: 0 10px 10px 10px ;
 				text-align: justify;
-				line-height: 28px;
-				@include font-size(18);
+				line-height: 20px;
+				@include font-size(14);
 				letter-spacing:0px;
 				white-space: pre-line;
 				
+				@include breakpoint(small){
+					@include font-size(16);
+					line-height: 24px;
+				}
+				
 				@include breakpoint(medium) {
-					padding: 30px;
+					@include font-size(18);
+					line-height: 28px;
+					padding: 0 30px 30px 30px;
 				}
 			}	
 
@@ -208,20 +253,18 @@
 			-------------------------------------------------- */
 						    
 			.post-video {
-				width:100%;
-				height:0;
-				position:relative;
-				border:0;
-				padding-bottom: 56.15%;
-
+				height: 0;
+				padding-bottom: 48.65%;
+				overflow:hidden;
+				position: relative;
 				
 				iframe {
-					width:100%;
 					height: 100%;
+					width: 100%;
 					position:absolute;
 					border:0;
-					left: 0;
 					top: 0;
+					left: 0;
 				}
 			}
 
