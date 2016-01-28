@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+ //= require readmore
 //= require_tree.
 
 /* --------------------------------------------------
@@ -40,3 +41,17 @@ $(document).on('ready page:load', function () {
     });
 });
 
+/* --------------------------------------------------
+   Readmore
+-------------------------------------------------- */
+$(document).on('ready page:load', function () {
+
+  $('article').readmore({
+    speed: 75,
+    embedCSS: false,
+    collapsedHeight: 250,
+    lessLink: '<a href="#" class="post-read-link">Read Less</a>',
+    moreLink: '<a href="#" class="post-read-link">Read More</a>'
+  });
+
+});

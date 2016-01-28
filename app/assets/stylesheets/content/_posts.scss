@@ -93,35 +93,51 @@
 		
 
 		/* --------------------------------------------------
-		   Datetime
+		   Post Datetime
 		-------------------------------------------------- */
 		    
 		.timeline-datetime {
 			position: absolute;
 			left:-36px;
-			width: 52px;
+			width: 60px;
 			top:70px;
-			text-align: center;
-			background-color: $white;
-			@include prefix(border-radius, 5px);
-			@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
 			@include breakpoint(small) {
 				left: -27px;
 			}
 			
 			p {
-				@include font-size(14);
-				padding: 0px 5px;
+				@include prefix(border-radius, 5px);
+				@include prefix(box-shadow, 0px 3px 0 rgba(0,0,0,0.1));
+				text-align: center;
+				background-color: $white;
+				@include font-size(12);
+				padding: 0px 2px;
 				color:$grey8;
 			}
 
+		}
+
+		/* --------------------------------------------------
+		   Post Read More/Less links
+		-------------------------------------------------- */
+		    
+		.post-read-link {
+			color:lighten($dark-blue, 10%);
+			float: right;
+			margin-right: 5%;
+			padding: 5px;
+			@include font-size(14);
+			
+			&:hover {
+				color:$dark-blue;
+			}
 		}
 
 		
 		/* --------------------------------------------------
 		   The Actual Post
 		-------------------------------------------------- */
-		.timeline-content {
+		article {
 			position: relative;
 			float: left;
 			background: #fff;
@@ -152,7 +168,7 @@
 			-------------------------------------------------- */
 
 			.post-title {
-				padding-bottom: 5px;
+				padding: 20px 20px 0px 20px;
 				background-color: $white;
 				color: $dark-blue;
 				margin: 0;
@@ -166,7 +182,9 @@
 				
 			.post-text {
 				color:$grey6;
-				padding-bottom: 5px;
+				padding: 20px;
+				text-align: justify;
+				line-height: 20px;
 			}	
 
 			/* --------------------------------------------------
@@ -205,7 +223,7 @@
 			}
 
 			.post-edit {
-				right: 20px;
+				left: 0;
 				i {
 					color:$blue;
 				}
