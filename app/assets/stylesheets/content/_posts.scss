@@ -168,7 +168,7 @@
 			-------------------------------------------------- */
 
 			.post-title {
-				padding: 20px 20px 0px 20px;
+				padding: 20px 20px 30px 20px;
 				background-color: $white;
 				color: $dark-blue;
 				margin: 0;
@@ -182,7 +182,7 @@
 				
 			.post-text {
 				color:$grey6;
-				padding: 10px;
+				padding: 0 10px 10px 10px;
 				text-align: justify;
 				line-height: 28px;
 				@include font-size(18);
@@ -190,7 +190,7 @@
 				white-space: pre-line;
 				
 				@include breakpoint(medium) {
-					padding: 30px;
+					padding: 0 30px 30px 30px;
 				}
 			}	
 
@@ -208,20 +208,18 @@
 			-------------------------------------------------- */
 						    
 			.post-video {
-				width:100%;
-				height:0;
-				position:relative;
-				border:0;
-				padding-bottom: 56.15%;
+				position: relative;
+				height: 0;
+				overflow: hidden;
+				padding-bottom: 56.25%;
 
-				
 				iframe {
-					width:100%;
-					height: 100%;
-					position:absolute;
-					border:0;
+					position: absolute;
+					border: 0;
+					top:0;
 					left: 0;
-					top: 0;
+					width: 100%;
+					height: 100%;
 				}
 			}
 
