@@ -3,11 +3,14 @@
   @if $point == small {
       @media (min-width: 520px) { @content; }
   }
-  @else if $point == medium {
-      @media (min-width: 768px) { @content; }
+  @else if $point == tiny {
+      @media (min-width: 370px) { @content; }
   }
-   @else if $point == neg-medium {
-      @media (max-width: 768px) { @content; }
+  @else if $point == medium {
+      @media (min-width: 769px) { @content; }
+  }
+  @else if $point == neg-medium {
+      @media (max-width: 769px) { @content; }
   }
   @else if $point == medium-large {
       @media (min-width: 960px) { @content; }

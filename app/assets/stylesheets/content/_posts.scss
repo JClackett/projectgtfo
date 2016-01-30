@@ -248,18 +248,41 @@
 			-------------------------------------------------- */
 						    
 			.post-video {
-				height: 0;
-				padding-bottom: 48.65%;
+
 				overflow:hidden;
 				position: relative;
+				height: 120px;
+				width: 213.34px;
 				
+				@include breakpoint(tiny){
+					height: 166px;
+					width: 295px;
+				}
+
+				@include breakpoint(small){
+					height: 231.85px;
+					width: 412px;
+				}
+				
+				@include breakpoint(medium) {
+					height: 360px;
+					width: 640px;
+				}
+				
+				@include breakpoint(medium-large) {
+					height: 282px;
+					width: 501px;
+				}
+
+				@include breakpoint(large) {
+					height: 360px;
+					width: 640px;
+				}
+
 				iframe {
 					height: 100%;
 					width: 100%;
-					position:absolute;
 					border:0;
-					top: 0;
-					left: 0;
 				}
 			}
 
