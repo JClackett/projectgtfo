@@ -8,7 +8,6 @@ Form Layout Template
 -------------------------------------------------- */
     
 	.post-form {
-
 		@extend .group;
 		background-color: $white;
 		min-width: 300px;
@@ -68,10 +67,10 @@ Form Layout Template
 		.post-text-area {
 			margin-top: 10px;
 			color:$grey4;
-			height: 300px;
+			min-height:300px;
 			
 			.medium-editor-placeholder {
-				height: 300px;
+				min-height: 300px;
 				
 				&:after {
 					font-style: normal;
@@ -209,6 +208,47 @@ Form Layout Template
 			}
 		}
 		
+	}
+
+	/* --------------------------------------------------
+	   Medium tool bar
+	-------------------------------------------------- */
+	.medium-editor-toolbar {
+		background-color: $dark-blue;
+			
+		li {
+			button{
+				border-right: 1px solid lighten($dark-blue,5%);
+				
+				&:hover {
+					background-color: darken($dark-blue,5%);
+				}
+			}
+
+			.medium-editor-button-active {
+				background-color: darken($dark-blue,5%);
+			}
+		}
+	}
+
+	.medium-toolbar-arrow-under:after {
+		border-color: $dark-blue transparent transparent;
+	}
+
+	.medium-editor-toolbar-form .medium-editor-toolbar-input {
+		background:darken($dark-blue,5%);
+		padding: 25px;
+	}
+	
+	.medium-editor-toolbar-anchor-preview {
+		background: $dark-blue;
+	}
+
+	.medium-editor-anchor-preview {
+		&:before {
+			border-color:transparent transparent $dark-blue;
+			
+		}
 	}
 
 }
