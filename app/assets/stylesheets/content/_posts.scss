@@ -57,7 +57,6 @@
 				}	
 			}
 
-
 			.creator-image {
 				width: 30px;
 				height: 30px;
@@ -122,8 +121,8 @@
 		    
 		.timeline-datetime {
 			position: absolute;
-			left:-45px;
-			width: 50px;
+			left:-47px;
+			width: 54px;
 			top:55px;
 			
 			p {
@@ -137,9 +136,9 @@
 			}
 
 			@include breakpoint(small) {
-				left: -27px;
+				left: -30px;
 				top: 70px;
-				width: 60px;
+				width: 65px;
 				
 				p {
 					@include font-size(12);
