@@ -117,8 +117,8 @@
 		    
 		.timeline-datetime {
 			position: absolute;
-			left:-47px;
-			width: 53px;
+			left:-45px;
+			width: 50px;
 			top:55px;
 			
 			p {
@@ -127,13 +127,14 @@
 				text-align: center;
 				background-color: $white;
 				@include font-size(10);
+				padding: 0px 2px;
 				color:$grey8;
 			}
 
 			@include breakpoint(small) {
-				left: -29px;
+				left: -27px;
 				top: 70px;
-				width: 65px;
+				width: 60px;
 				
 				p {
 					@include font-size(12);
@@ -217,22 +218,17 @@
 			   Text
 			-------------------------------------------------- */
 				
-			.post-text {
-				color:$grey6;
+			.post-text-content {
+				color:$grey8;
 				padding: 0 10px 10px 10px ;
 				text-align: justify;
-				line-height: 20px;
 				@include font-size(14);
-				letter-spacing:0px;
-				white-space: pre-line;
 				
 				@include breakpoint(small){
-					@include font-size(16);
 					line-height: 24px;
 				}
 				
 				@include breakpoint(medium) {
-					@include font-size(18);
 					line-height: 28px;
 					padding: 0 30px 30px 30px;
 				}
