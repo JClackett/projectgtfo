@@ -68,10 +68,10 @@ Form Layout Template
 		.post-text-area {
 			margin-top: 10px;
 			color:$grey4;
-			height: 300px;
+			min-height: 300px;
 			
 			.medium-editor-placeholder {
-				height: 300px;
+				min-height: 300px;
 				
 				&:after {
 					font-style: normal;

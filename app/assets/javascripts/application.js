@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+//= require pagination
+
 //= require turbolinks
+
 //= require readmore
 //= require_tree.
 
