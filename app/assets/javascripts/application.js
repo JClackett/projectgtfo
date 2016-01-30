@@ -65,7 +65,24 @@ $(document).on('ready page:load', function () {
         placeholder: {
         /* This example includes the default options for placeholder,
            if nothing is passed this is what it used */
-        text: 'Write your story here ...'
+        text: 'Write your story here ...',
+    },
+        toolbar: {
+        /* These are the default options for the toolbar,
+           if nothing is passed this is what is used */
+        allowMultiParagraphSelection: true,
+        buttons: ['bold', 'italic', 'underline', 'anchor', 'h3', 'h4', 'quote'],
+        diffLeft: 0,
+        diffTop: -10,
+        firstButtonClass: 'medium-editor-button-first',
+        lastButtonClass: 'medium-editor-button-last',
+        standardizeSelectionStart: false,
+        static: false,
+        relativeContainer: null,
+        /* options which only apply when static is true */
+        align: 'center',
+        sticky: false,
+        updateOnEmptySelection: false
     }
   });
 });

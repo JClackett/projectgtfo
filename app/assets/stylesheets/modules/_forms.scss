@@ -49,8 +49,8 @@ Form Layout Template
 		-------------------------------------------------- */
 		    
 		.post-title-area {
-			input[type="text"]::-webkit-input-placeholder, input:-moz-placeholder, input::-moz-placeholder, input:-ms-input-placeholder {
-				color: $grey5 !important;
+			input::-webkit-input-placeholder {
+				color: $grey7 !important;
 			}
 
 			
@@ -87,7 +87,7 @@ Form Layout Template
 		    
 		.video-url {
 			input {
-				color:$blue;
+				color:$dark-blue;
 			}
 		}
 		
@@ -96,8 +96,23 @@ Form Layout Template
 		-------------------------------------------------- */
 		    
 		.image-attachment {
+			margin:0 auto;
+			width: 93px;
+			border-radius:4px;
+			padding: 5px 8px;
+			overflow: hidden;
+			background-color: $dark-blue;
+			
+			&:hover {
+				background-color: lighten($dark-blue,5%);
+			}
 			input {
-				color:$red;
+				float: left;
+				&:before {
+					content: "add image ...     ";
+					color:$white;
+					font-variant: small-caps;
+				}
 			}
 			
 		}
