@@ -117,8 +117,8 @@
 		    
 		.timeline-datetime {
 			position: absolute;
-			left:-45px;
-			width: 50px;
+			left:-47px;
+			width: 53px;
 			top:55px;
 			
 			p {
@@ -127,14 +127,13 @@
 				text-align: center;
 				background-color: $white;
 				@include font-size(10);
-				padding: 0px 2px;
 				color:$grey8;
 			}
 
 			@include breakpoint(small) {
-				left: -27px;
+				left: -29px;
 				top: 70px;
-				width: 60px;
+				width: 65px;
 				
 				p {
 					@include font-size(12);
