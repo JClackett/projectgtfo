@@ -47,15 +47,22 @@
 		
 		<% if post.title? %>
 
-			<h3 class="post-title"><%= post.title %></h3>
+			<h2 class="post-title"><%= post.title %></h2>
 
 		<% end %>
 
 		
 		<% if  post.text? %>
 
-			<p class="post-text"><%= post.text %></p>
+<<<<<<< HEAD
+			<p class="post-text"><%=raw post.text %></p>
 		
+=======
+			<div class="post-text-content">
+				<%= raw post.text %>
+			</div>
+
+>>>>>>> text_editor
 		<% end %>
 
 		

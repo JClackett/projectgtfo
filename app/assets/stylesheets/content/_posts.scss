@@ -36,11 +36,12 @@
 	.timeline-item {
 		margin-bottom: 10px;
 		position: relative;
+		width: 100%;
 		padding: 10px;
 		@extend .group;
 		
 		@include breakpoint(small){
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 		}
 		
 		/* --------------------------------------------------
@@ -121,8 +122,8 @@
 		    
 		.timeline-datetime {
 			position: absolute;
-			left:-47px;
-			width: 53px;
+			left:-45px;
+			width: 50px;
 			top:55px;
 			
 			p {
@@ -131,13 +132,14 @@
 				text-align: center;
 				background-color: $white;
 				@include font-size(10);
+				padding: 0px 2px;
 				color:$grey8;
 			}
 
 			@include breakpoint(small) {
-				left: -29px;
+				left: -27px;
 				top: 70px;
-				width: 65px;
+				width: 60px;
 				
 				p {
 					@include font-size(12);
@@ -203,17 +205,17 @@
 			-------------------------------------------------- */
 
 			.post-title {
-				padding: 10px 10px 20px 10px;
+				padding: 10px 10px 10px 10px;
 				background-color: $white;
 				color: $dark-blue;
 				margin: 0;
 				font-weight: 600;
-				@include font-size(14);
+				@include font-size(18);
 				@include prefix(border-radius, 3px 3px 0 0);
 				
 				@include breakpoint(small) {
-					@include font-size(18);
-					padding: 20px 20px 30px 20px;
+					@include font-size(20);
+					padding: 10px 20px 10px 20px;
 				}
 			}
 
@@ -221,24 +223,21 @@
 			   Text
 			-------------------------------------------------- */
 				
-			.post-text {
+			.post-text-content {
 				color:$grey6;
 				padding: 0 10px 10px 10px ;
 				text-align: justify;
-				line-height: 20px;
 				@include font-size(14);
-				letter-spacing:0px;
-				white-space: pre-line;
+				
+				a {
+					color:darken($blue,25%);
+				}
 				
 				@include breakpoint(small){
-					@include font-size(16);
-					line-height: 24px;
 				}
 				
 				@include breakpoint(medium) {
-					@include font-size(18);
-					line-height: 28px;
-					padding: 0 30px 30px 30px;
+					padding: 0 30px 10px 30px;
 				}
 			}	
 
