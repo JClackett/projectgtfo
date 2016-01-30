@@ -13,8 +13,28 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
- //= require readmore
+//= require readmore
 //= require_tree.
+
+
+/* --------------------------------------------------
+   Infinite Scroll
+-------------------------------------------------- */
+
+$(document).on('ready page:load', function () {
+  if ($('.pagination').length) {
+    $(window).scroll(function() {
+      var url = $('.pagination .next_page').attr('href');
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 100) {
+        $('.pagination').text("");  
+
+        return $.getScript(url);
+
+      };
+    });
+    return $(window).scroll();
+  };
+});
 
 /* --------------------------------------------------
    Hide Flash Messages

@@ -1,3 +1,5 @@
-<div id="timeline">
+<div id="timeline" class="timeline">
 	<%= render @posts %>
 </div>
+
+<%=  will_paginate @posts, class: "pagination" %>

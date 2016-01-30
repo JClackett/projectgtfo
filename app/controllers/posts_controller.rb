@@ -14,9 +14,10 @@ class PostsController < ApplicationController
 
 	def index
 		if params[:tag].present?
-			@posts = Post.joins(:tags).where(tags: { title: params[:tag] } ).all.reverse
+			@posts = Post.joins(:tags).where(tags: { title: params[:tag] } ).paginate(:page => params[:page], :per_page =>10).reverse_order
+
 		else
-			@posts = Post.all.reverse
+			@posts = Post.uniq.paginate(:page => params[:page], :per_page =>10).reverse_order
 		end
 	end
 
