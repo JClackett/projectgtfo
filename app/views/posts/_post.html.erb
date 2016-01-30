@@ -54,8 +54,10 @@
 		
 		<% if  post.text? %>
 
-			<p class="post-text"><%= post.text %></p>
-		
+			<div class="post-text-content">
+				<%= raw post.text %>
+			</div>
+
 		<% end %>
 
 		

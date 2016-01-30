@@ -8,10 +8,11 @@ Form Layout Template
 -------------------------------------------------- */
     
 	.post-form {
+
 		@extend .group;
 		background-color: $white;
 		min-width: 300px;
-		padding: 20px;
+		padding: 30px;
 		width: 98%;
 		margin: 80px 1%;
 		
@@ -33,16 +34,13 @@ Form Layout Template
 			-moz-appearance: none;
 			appearance: none;
 			border: none;
-			padding: 10px;
-			font-size: 14px;
-			font-size: 1.4rem;
 			width: 100%;
 		}
 
 		.field-row {
+			padding: 5px;
 			input {
 				width:100%;
-				margin: 5px 0;
 			}
 		}
 
@@ -51,10 +49,14 @@ Form Layout Template
 		-------------------------------------------------- */
 		    
 		.post-title-area {
+			input[type="text"]::-webkit-input-placeholder, input:-moz-placeholder, input::-moz-placeholder, input:-ms-input-placeholder {
+				color: $grey5 !important;
+			}
+
 			
 			input {
 				@include font-size(24);
-				color:$grey3;
+				color:$dark-blue;
 				font-weight: 500;
 			}
 		}
@@ -64,11 +66,19 @@ Form Layout Template
 		-------------------------------------------------- */
 		    
 		.post-text-area {
-			textarea {
+			margin-top: 10px;
+			color:$grey4;
+			height: 300px;
+			
+			.medium-editor-placeholder {
 				height: 300px;
-				resize:none;
-				color:$grey3;
+				
+				&:after {
+					font-style: normal;
+					color:$greyA;
+				}
 			}
+			
 		}
 
 		/* --------------------------------------------------

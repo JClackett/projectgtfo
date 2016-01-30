@@ -32,6 +32,7 @@
 	.timeline-item {
 		margin-bottom: 10px;
 		position: relative;
+		width: 100%;
 		padding: 10px;
 		@extend .group;
 		
@@ -218,22 +219,17 @@
 			   Text
 			-------------------------------------------------- */
 				
-			.post-text {
-				color:$grey6;
+			.post-text-content {
+				color:$grey8;
 				padding: 0 10px 10px 10px ;
 				text-align: justify;
-				line-height: 20px;
 				@include font-size(14);
-				letter-spacing:0px;
-				white-space: pre-line;
 				
 				@include breakpoint(small){
-					@include font-size(16);
 					line-height: 24px;
 				}
 				
 				@include breakpoint(medium) {
-					@include font-size(18);
 					line-height: 28px;
 					padding: 0 30px 30px 30px;
 				}

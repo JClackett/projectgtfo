@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
- //= require readmore
+//= require medium-editor
+//= require readmore
 //= require_tree.
 
 /* --------------------------------------------------
@@ -46,12 +47,25 @@ $(document).on('ready page:load', function () {
 -------------------------------------------------- */
 $(document).on('ready page:load', function () {
 
-  $('article .post-text').readmore({
+  $('article .post-text-content').readmore({
     speed: 75,
     embedCSS: false,
-    collapsedHeight: 200,
+    collapsedHeight: 150,
     lessLink: '<a href="#" class="post-read-link">Read Less</a>',
     moreLink: '<a href="#" class="post-read-link">Read More</a>'
   });
 
+});
+
+/* --------------------------------------------------
+   Post Form Medium Editor
+-------------------------------------------------- */
+$(document).on('ready page:load', function () {
+  var editor = new MediumEditor('.post-text-area textarea', {
+        placeholder: {
+        /* This example includes the default options for placeholder,
+           if nothing is passed this is what it used */
+        text: 'Write your story here ...'
+    }
+  });
 });
