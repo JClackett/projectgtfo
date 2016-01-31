@@ -223,7 +223,7 @@
 			-------------------------------------------------- */
 				
 			.post-text-content {
-				color:$grey6;
+				color:$grey3;
 				padding: 0 10px 10px 10px ;
 				text-align: justify;
 				@include font-size(14);
@@ -293,10 +293,10 @@
 			}
 
 			/* --------------------------------------------------
-			   Delete & Edit Button		       
+			  Show,  Delete , Edit Buttons		       
 			-------------------------------------------------- */
 			
-			.post-delete , .post-edit {
+			.post-delete , .post-edit , .post-show{
 				position: absolute;
 				top:0;
 				
@@ -313,9 +313,16 @@
 			}	
 
 			.post-delete {
-				right:0;
+				right:20px;
 				i  {
 					color:$red;
+				}
+			}
+
+			.post-show {
+				right: 0;
+				i {
+					color:$grey4;
 				}
 			}
 
@@ -359,6 +366,27 @@
 			@include font-size(18);
 			color:$grey3;
 			line-height: 35px;
+		}
+		
+		span {
+			@include font-size(18);
+		}
+
+		blockquote {
+			color:$grey5;
+			text-align: justify;
+			line-height: 22px;
+			position: relative;
+			
+			&:before {
+				content: "";
+				width: 2px;
+				position: absolute;
+				left:-20px;
+				height:100%;
+				top: 0;
+				background-color: $grey8;
+			}
 		}
 		
 		img {

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # Tags
   # ----------------------------------------------------------
 
-  resources :tags, except: [:show, :edit ]
+  resources :tags, except: [:show]
 
   # ----------------------------------------------------------
     # Devise

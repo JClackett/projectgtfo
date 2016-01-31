@@ -20,7 +20,7 @@
 
 	<article>
 
-		<% if current_user.try(:admin?) %>
+		<% if can? :destroy, post %>
 
 			<%= link_to post, method: :delete, data: { confirm: 'Are you sure?' } do %>
 
@@ -32,6 +32,20 @@
 
 			<% end %>
 
+		<% end %>
+
+		<%= link_to post_path(post) do %>
+
+			<div class="post-show">
+
+				<i class="fa fa-external-link"></i>
+
+			</div>
+			
+		<% end %>
+
+		<% if can? :update, post %>
+		
 			<%= link_to edit_post_path(post) do %>
 
 				<div class="post-edit">
