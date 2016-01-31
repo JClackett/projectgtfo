@@ -14,9 +14,9 @@ class PostsController < ApplicationController
 
 	def index
 		if params[:tag].present?
-			@posts = Post.joins(:tags).where(tags: { title: params[:tag] } ).all.reverse
+			@posts = Post.joins(:tags).where(tags: { title: params[:tag] } ).paginate(page: params[:page], per_page: 10).reverse_order
 		else
-			@posts = Post.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+			@posts = Post.paginate(page: params[:page], per_page: 10).reverse_order
 		end
 
 		respond_to do |format|
