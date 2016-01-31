@@ -12,12 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-
-//= require pagination
-
 //= require turbolinks
-
 //= require readmore
+//= require posts
 //= require_tree.
 
 /* --------------------------------------------------
@@ -88,4 +85,21 @@ $(document).on('ready page:load', function () {
         updateOnEmptySelection: false
     }
   });
+});
+
+/* --------------------------------------------------
+   Infinite Scroll
+-------------------------------------------------- */
+
+$(document).on('ready page:load', function () {
+  if ($('.pagination').length) {
+    $(window).scroll(function() {
+      var url = $('.pagination .next_page').attr('href');
+      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+        $('.pagination').text("Please Wait...");
+        return $.getScript(url);
+      }
+    });
+    return $(window).scroll();
+  }
 });
