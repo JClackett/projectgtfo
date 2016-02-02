@@ -1,7 +1,7 @@
 .l-application {
 
 /* --------------------------------------------------
-Sidebar
+Main Sidebar
 -------------------------------------------------- */
 .sidebar {
 	height:calc(100% - 60px);     // Need to sort this out
@@ -24,9 +24,11 @@ Sidebar
 	.sidebar-title {
 		margin-bottom: 20px;
 		width: 100%;
+		font-variant: small-caps;
 		border-bottom: 1px solid $grey9;
 		
-		p {
+		p {	
+			@include font-size(16);
 			margin:0 0 10px 0;	
 			font-weight:700;
 		}
@@ -61,7 +63,6 @@ Sidebar
 			}
 
 		}
-
 	}
 
 	/* --------------------------------------------------
@@ -86,5 +87,83 @@ Sidebar
 			margin: 0;
 		}
 	}
+
 }
+
+
+
+
+
+
+/* --------------------------------------------------
+   Small Sidebar
+-------------------------------------------------- */
+.small-sidebar {
+	height:200px;     // Need to sort this out
+	@extend .group;
+	background-color: darken($background,5%);
+	width: 100%;
+	padding: 20px;
+	z-index: 2;
+	
+	@include breakpoint(medium-large) {
+		display:none;
+	}
+	
+	/* --------------------------------------------------
+	   Sidebar Title
+	-------------------------------------------------- */
+	.sidebar-title {
+		margin-bottom: 20px;
+		width: 30%;
+		font-variant: small-caps;
+		border-bottom: 1px solid lighten($dark-blue,20%);
+		
+		p {	
+			@include font-size(16);
+			color:$dark-blue;
+			margin:0 0 10px 0;	
+			font-weight:400;
+		}
+	}
+
+	/* --------------------------------------------------
+	   Tags
+	-------------------------------------------------- */
+	.sidebar-tags {
+		width: 30%;
+		display:inline;
+		@extend .group;
+
+		ul {	
+			@extend .group;
+			margin: 0;
+			
+			li {	
+				float: left;
+				text-align: center;
+				margin-right: 5px;
+				margin-bottom: 16px;
+				a {
+					color: lighten($dark-blue,20%);
+					@include font-size(14);
+					padding:5px 10px;
+					border:1px solid lighten($dark-blue,40%);
+					background-color: $background;
+					@include border-radius(3px);
+					
+					&:hover {
+						background-color: darken($background, 2%);
+					}
+				}
+
+			}
+
+		}
+	}
+
 }
+
+
+}
+

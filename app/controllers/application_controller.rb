@@ -29,6 +29,12 @@ class ApplicationController < ActionController::Base
 
 		def story
 		end
+
+		def contact
+		end
+
+		def about
+		end
 		
 
 		def configure_devise_permitted_parameters

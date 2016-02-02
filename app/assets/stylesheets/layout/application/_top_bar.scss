@@ -10,23 +10,28 @@
 	top: 0;
 	left: 0;
 	position: fixed;
-	height: 60px;	
+	height: 80px;	
 	
+	@include breakpoint(small) {
+		height: 60px;
+	}
 
-	/* --------------------------------------------------
-	   Links
-	-------------------------------------------------- */
-	    
-	
 	
 	/* --------------------------------------------------
 	   Logo
 	-------------------------------------------------- */
 	.logo-section {
 		cursor: pointer;
+		width: 100%;
+		text-align:center;
+		
+		@include breakpoint(small) {
+			width: 165px;
+			text-align: left;
+		}
 		
 		h3 {
-			line-height: 35px;
+			line-height: 20px;
 			font-weight: 500;
 			color:$dark-blue;
 			letter-spacing: 2px;
@@ -34,30 +39,50 @@
 			padding: 10px 20px;
 			margin: 0;
 			@include no-select(none);
+			
+			@include breakpoint(small) {
+				line-height: 35px;
+			}			
 		}
 	}
 
 	/* --------------------------------------------------
 	   Links Buttons
 	-------------------------------------------------- */
-	.story-so-far, .new-post-button , .new-tag-button {
+	.story-so-far, .new-post-button , .new-tag-button, .what-is-this, .contact {
+		display:inline;
+		width: 33%;
+		text-align: center;
+		
+		@include breakpoint(small) {
+			width: 115px;
+			text-align: left;
+		}
 		
 		a {	
 			cursor: pointer;
-			line-height: 55px;
+			line-height: 30px;
 			font-weight: 500;
 			color:$dark-blue;
 			font-variant: small-caps;
 			padding: 5px;
-			margin: 0 5px;
 			@include no-select(none);
-			@include font-size(18);
+			@include font-size(14);
 			
 			&:hover {
 				border-bottom:1px solid $dark-blue;
 			}
+
+			@include breakpoint(small) {
+				line-height: 55px;
+				@include font-size(18);
+			}
 		}
 
+	}
+
+	.link-container {
+		
 	}
 
 	/* --------------------------------------------------

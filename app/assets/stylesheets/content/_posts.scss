@@ -4,7 +4,7 @@
 #timeline {
   	margin: 0 0 0 50px;
   	padding-top: 10px;
-  	padding-bottom: 30px;
+  	padding-bottom: 10px;
 	position: relative;
 	@include prefix(transition, all .4s ease);
 		
@@ -23,6 +23,22 @@
 		
 		@include breakpoint(small) {
 			left: 0;
+		}
+	}
+
+	&:after {
+		display:none;
+		
+		@include breakpoint(medium-large){
+			display: block;
+			content: "";
+			width: 13px;
+			height: 13px;
+			@include border-radius(50%);
+			position: absolute;
+			bottom:0px;
+			left: -5px;
+			background-color: darken($background, 5%);
 		}
 	}
 	
@@ -374,7 +390,6 @@
 			@include border-radius(3px);
 			padding: 5px 15px;
 			display: block;
-			float: right;
 			color: $grey9;
 			border:1px solid $grey9;
 

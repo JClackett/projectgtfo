@@ -2,9 +2,14 @@
       
 .main-content {
 	margin-left: 0px;
-	margin-top:60px;
+	margin-top:80px;
 	margin-right: 0;
 	@extend .group;
+	
+	@include breakpoint(small){
+		margin-top: 60px;
+		
+	}
 	
 	@include breakpoint(medium-large) {
 		margin-right: 300px;
