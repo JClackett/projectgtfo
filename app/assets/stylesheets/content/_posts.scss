@@ -1,14 +1,10 @@
 /* --------------------------------------------------
    Main Timeline
 -------------------------------------------------- */
-// .pagination {
-//   // visibility:hidden;
-//   display:none;
-// }
-
 #timeline {
   	margin: 0 0 0 50px;
   	padding-top: 10px;
+  	padding-bottom: 30px;
 	position: relative;
 	@include prefix(transition, all .4s ease);
 		
@@ -334,14 +330,68 @@
 			}
 		}
 	}
+
+	/* --------------------------------------------------
+	   Pagination
+	-------------------------------------------------- */
+
+	.pagination {
+		cursor: default;
+		@extend .group;
+		text-align:center;
+		margin: 0 auto;
+		width: 60%;
+		position: relative;
+		
+		@include breakpoint(small) {
+			width: 35%;
+		}
+	  
+		a  {
+			padding: 5px 15px;
+			display: block;
+			float: right;
+			color: lighten($dark-blue,5%);
+			border: 1px solid $dark-blue;
+			@include border-radius(3px);
+			
+			&:hover {
+				background-color: $dark-blue;
+				color: $white;
+				border: 1px solid $dark-blue
+			}
+		 }
+	  
+		.previous_page {
+			float: right;
+		}
+
+		.next_page {
+			float: left;
+		}
+
+		.disabled {
+			@include border-radius(3px);
+			padding: 5px 15px;
+			display: block;
+			float: right;
+			color: $grey9;
+			border:1px solid $grey9;
+
+		}
+	}
 }
+
+
+
 
 
 /* --------------------------------------------------
    Post Show Page
 -------------------------------------------------- */
 .post-show-container {
-	width: 100%;
+	width: 60%;
+	margin: 0 auto;
 	background-color: $white;
 	text-align: center;
 	
@@ -393,4 +443,5 @@
 			width: 80%;
 		}
 	}
+
 }

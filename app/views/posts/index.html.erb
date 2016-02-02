@@ -1,5 +1,7 @@
 <div id="timeline">
 	<%= render @posts %>
+
+	<%=  will_paginate @posts , page_links: false, class: "pagination"%>
 </div>
 
-<%=  will_paginate @posts , class: "pagination"%>
+

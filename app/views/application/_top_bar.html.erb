@@ -6,7 +6,7 @@
 			
 			<%= link_to root_path do %>
 
-				<h3>the great escape</h3>
+				<h3>project gtfo</h3>
 
 			<% end %>
 
@@ -34,36 +34,35 @@
 
 		<% end %>
 
-		<div class="login-section right">
+<!-- 		<div class="login-section right">
 			
-			<% if user_signed_in? %>
+			<%# if user_signed_in? %>
 
 			           <div class="current-user" >
 
 				           	<div class="user-initials">
-				           		<!-- Need to make Users Controller -->
 				           	</div>
 
-				           	<%= gravatar_image_tag(current_user.email.gsub('spam', 'mdeering'), :alt => current_user.email) %>
+				           	<%#= gravatar_image_tag(current_user.email.gsub('spam', 'mdeering'), :alt => current_user.email) %>
 			           </div>
 
 			           <div class="user-logout">
 
-			                     	<%= link_to 'logout', destroy_user_session_path, method: :delete %>
+			                     	<%#= link_to 'logout', destroy_user_session_path, method: :delete %>
 
 			           </div>	
 
-		           <% else %>
+		           <%# else %>
 
 			           <div class="user-login">
 
-			                     	<%= link_to 'login', login_path, method: :delete %>
+			                     	<%#= link_to 'login', login_path, method: :delete %>
 
 			           </div>	
 
-			<% end %>
+			<%# end %>
 
-		</div>
+		</div> -->
 	
 	</div>
 
