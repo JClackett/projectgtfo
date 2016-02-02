@@ -59,14 +59,14 @@
 		<% end %>
 
 		
-		<% if post.title? %>
+		<% unless post.title.blank? %>
 
 			<h2 class="post-title"><%= post.title %></h2>
 
 		<% end %>
 
 		
-		<% if  post.text? %>
+		<% unless  post.text.blank? %>
 
 			<div class="post-text-content">
 				<%= raw post.text %>
@@ -75,7 +75,7 @@
 		<% end %>
 
 		
-		<% if  post.video? %>
+		<% unless  post.video.blank? %>
 
 			<div class="post-video">
 

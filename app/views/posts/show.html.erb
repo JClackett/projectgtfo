@@ -4,11 +4,25 @@
 	
 		<h1><%= @post.title %></h1>
 
-		<p><%= raw @post.text %></p>
+		<% unless @post.text.blank? %>
+
+			<p><%= raw @post.text %></p>
+
+		<% end %>
 
 		<% unless @post.photo.blank? %>
 
 	  			<%= image_tag(@post.photo.url(:original))%>
+
+		<% end %>
+
+		<% unless @post.video.blank? %>
+
+			<div class="post-show-video">
+
+	  			<%= embed(@post.video) %>
+			
+			</div>
 
 		<% end %>
 
