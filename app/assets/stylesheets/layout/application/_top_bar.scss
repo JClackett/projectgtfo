@@ -49,7 +49,7 @@
 	/* --------------------------------------------------
 	   Links Buttons
 	-------------------------------------------------- */
-	.story-so-far, .new-post-button , .new-tag-button, .what-is-this, .contact {
+	.story-so-far, .new-post-button, .new-tag-button, .what-is-this, .contact {
 		display:inline;
 		width: 33%;
 		text-align: center;
@@ -81,8 +81,8 @@
 
 	}
 
-	.link-container {
-		
+	.new-post-button, .new-tag-button {
+		width: 30px;
 	}
 
 	/* --------------------------------------------------
