@@ -285,7 +285,7 @@
 			-------------------------------------------------- */
 						    
 			.post-video {
-
+				margin: 0 auto;
 				overflow:hidden;
 				position: relative;
 				height: 120px;
@@ -302,13 +302,13 @@
 				}
 				
 				@include breakpoint(medium) {
-					height: 360px;
-					width: 640px;
+					height: 309.6px;
+					width: 550px;
 				}
 				
 				@include breakpoint(medium-large) {
-					height: 282px;
-					width: 501px;
+					height: 253.3px;
+					width: 450px;
 				}
 
 				@include breakpoint(large) {
