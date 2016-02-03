@@ -4,7 +4,15 @@
 
 		<div class="creator-image">
 
-			<%= gravatar_image_tag(post.user.email.gsub('spam', 'mdeering')) %>
+			<% if post.user.email == "projectgtfo@gmail.com" %>
+
+				<%= image_tag('theboys.jpg') %>
+
+			<% else %>
+
+				<%= gravatar_image_tag(post.user.email.gsub('spam', 'mdeering')) %>\
+
+			<% end %>
 
 		</div>
 
