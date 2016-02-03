@@ -37,11 +37,6 @@
 	<div class="field-row">
 		<%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Re-enter your password", class: "input" %>
 	</div>
-
-	<div class="field-row">
-		<%= f.label "Admin" %>
-		<%= f.check_box :admin %>
-	</div>
 	
 	<div class="login-actions">
 		<%= f.button "Sign Up", type: 'submit', class: "login-button-reg", data: { disable_with: 'Submitting' } %>
