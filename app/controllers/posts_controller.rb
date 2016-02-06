@@ -14,9 +14,9 @@ class PostsController < ApplicationController
 
 	def index
 		if params[:tag].present?
-			@posts = Post.joins(:tags).where(tags: { title: params[:tag] } ).paginate(page: params[:page], per_page: 10).reverse_order
+			@posts = Post.joins(:tags).where(tags: { title: params[:tag] } ).paginate(page: params[:page], per_page: 10).ordered_by_reverse_order
 		else
-			@posts = Post.paginate(page: params[:page], per_page: 10).reverse_order
+			@posts = Post.paginate(page: params[:page], per_page: 10).ordered_by_reverse_order
 		end
 
 		respond_to do |format|
@@ -103,6 +103,7 @@ class PostsController < ApplicationController
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	private
+	
 	# Use callbacks to share common setup or constraints between actions.
 	def set_post
 	  @post = Post.find(params[:id])

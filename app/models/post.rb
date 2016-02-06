@@ -54,7 +54,7 @@ validates_attachment :photo, content_type: { content_type: ["image/jpeg", "image
 # Scopes
 # ------------------------------------------------------------------------------
 
-
+scope :ordered_by_reverse_order, -> { order('created_at DESC') }
 
 # ------------------------------------------------------------------------------
 # Other
