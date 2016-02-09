@@ -238,11 +238,11 @@
 			-------------------------------------------------- */
 				
 			.post-text-content {
-				color:$grey3;
 				padding: 0 10px 10px 10px ;
 				text-align: justify;
 
 				h3 {
+					color:$grey3;
 					@include font-size(16);
 					line-height: 30px;
 				}
@@ -259,6 +259,12 @@
 
 				a {
 					color:darken($blue,25%);
+				}
+
+				blockquote {
+					line-height: 25px;
+					color: $grey6;
+					@include font-size(14);
 				}
 				
 				@include breakpoint(small){
@@ -472,19 +478,20 @@
 		}
 
 		blockquote {
-			color:$grey5;
+			color:$grey6;
 			text-align: justify;
-			line-height: 22px;
+			@include font-size(14);
+			line-height: 25px;
 			position: relative;
 			
 			&:before {
 				content: "";
 				width: 2px;
 				position: absolute;
-				left:-20px;
+				left:-30px;
 				height:100%;
 				top: 0;
-				background-color: $grey8;
+				background-color: $grey6;
 			}
 		}
 		
