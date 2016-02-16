@@ -1,5 +1,5 @@
 set :application, 'projectgtfo'
-set :repo_url, 'https://github.com/MacClayzon/projectgtfo.git'
+set :repo_url, 'https://github.com/JClackett/projectgtfo.git'
 
 set :deploy_to, '/home/deploy/projectgtfo'
 
