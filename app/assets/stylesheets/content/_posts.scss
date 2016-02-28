@@ -247,7 +247,7 @@
 					line-height: 30px;
 				}
 
-				p {	
+				p ,span {	
 					@include font-size(14);
 					color:$grey3;
 					line-height: 25px;
@@ -465,7 +465,7 @@
 			line-height: 30px;
 		}
 
-		p {	
+		p ,span {	
 			text-align: justify;
 			@include font-size(14);
 			color:$grey3;
@@ -475,6 +475,10 @@
 			@include breakpoint(small) {
 				@include font-size(18);
 			}
+		}
+			
+		a {
+			color:darken($blue,25%);
 		}
 
 		blockquote {
